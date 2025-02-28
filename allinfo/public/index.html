@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="og:title" content="ALLINFO of UD">
+    <meta name="og:description"
+        content="Sur le site ALLINFO obtener des informations sur l'université de Douala">
+    <meta name="og:image" content="image/new logo.jpg">
+    <meta name="og:url" content="https://allinfo-4fd2a.web.app">
+    <title>ALLINFO</title>
+    <link rel="icon" href="image/20240818_191553.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles par défaut de la navbar */
+        .navbar {
+            transition: background-color 0.3s ease, color 0.3s ease;
+            /* Transition douce pour couleur */
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
+        }
+
+        /* Styles lorsque l'on fait défiler */
+        .navbar.scrolled {
+            background-color: rgb(11, 57, 96) !important;
+            /* Couleur de fond blanche */
+            color: black;
+            /* Couleur du texte noire */
+        }
+
+        /* Icônes et logo inversés */
+        .navbar.scrolled .nav-link,
+        .navbar.scrolled .navbar-brand img {
+            filter: invert(0);
+            /* Normaliser les couleurs pour les icônes et le logo */
+        }
+
+        /* Couleur de l'icône de menu */
+        .navbar.scrolled .navbar-toggler-icon {
+            background-color: black;
+            /* Couleur de l'icône de menu */
+            border-radius: 9px;
+        }
+
+        #acs {
+            overflow: hidden;
+            /* Cache le texte qui n'est pas encore affiché */
+            border-right: .15em solid orange;
+            /* Curseur d'écriture */
+            white-space: nowrap;
+            /* Empêche le texte de se décaler */
+            margin: 0 auto;
+            /* Centrer le texte */
+            letter-spacing: .15em;
+            /* Espacement entre les lettres */
+            animation: caret 0.75s step-end infinite;
+            /* Animation du curseur */
+        }
+
+        @keyframes caret {
+            from {
+                border-color: transparent;
+            }
+
+            to {
+                border-color: orange;
+                /* Couleur du curseur */
+            }
+        }
+
+        header {
+            height: 50vh;
+            width: auto;
+            background: linear-gradient(rgba(49, 60, 70, 0.405), rgba(0, 0, 0, 0.438)), url("image/hero.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-black fixed-top black">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#"> <img src="image/IMG-20240818-WA0036.jpg" height="60px" width="60px"
+                    style="border-radius: 25px;" alt=""></a>
+            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+                aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"><a href="#"><img
+                                src="image/IMG-20240818-WA0036.jpg" height="40px" width="40px" alt=""
+                                style="border-radius: 10px;"></a></h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html"><i
+                                    class="bi bi-house-door-fill fg"></i> Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="poser-des-question.html"><i
+                                    class="bi bi-question-circle fg"></i>Poser votre question</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="profil.html"><i
+                                    class="bi bi-person-square fg"></i>Profil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                                href="whatsapp://send?text=https://allinfo-4fd2a.web.app"
+                                data-action="share/whatsapp/share"><i class="bi bi-share-fill fg"></i>partager le
+                                site</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                                href="https://drive.google.com/file/d/1N7E4zg6V3L08wkpAztWwsSnBz02qaNv8/view?usp=drivesdk"
+                                target="_blank"><i class="bi bi-book-half fg"></i>Cours</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#A-propos"><i
+                                    class="bi bi-gear fg"></i>A propos du site</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex mt-3" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav><br><br><br>
+    <header>
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="section-title">
+                    <h1 class="display-4 fw-semibold" id="acs"> </h1><br>
+                    <div class="line"></div>
+                    <p
+                        style="color: white; font-size: 20px; font-family: Normal 'Oxygen', sans-serif; font-weight: 600; padding: 1px;">
+                        Sur allinfo Trouvez les informations sur <b>l'université de Douala</b> dont vous avez besoin
+                        pour reussir vos études superieures ! </p>
+                </div>
+            </div>
+            <div class="img" style="display: block; margin-left: auto;margin-right: auto;">
+                <img src="logo_udo.jpg" alt="logo université de douala" width="50px" height="50px">
+            </div><br>
+        </div>
+    </header>
+    <div class="ar" style="background-color: rgb(230, 161, 53);">
+        <marquee behavior="scrolled" direction="" style="background-color: rgb(11, 57, 96); color:white;">Rentrée
+            académique des Etudiants du niveau 1 prévu le 7 octobre </marquee>
+        <p><a href="image/1725370378530.jpg" download="1725370378530.jpg" style="font-size: 15px; text-decoration: none; color: white; text-decoration: underline;">Télécharger le
+                communiquer </a></p>
+    </div>
+    <h1 style="font-size: 20px; padding: 10px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+        <i class="bi bi-search fg"></i>Recherche par Catégorie</h1>
+    <div class="option" style="padding: 10px;">
+        <select id="category" onchange="filterItems()">
+            <option value="all">Tous</option>
+            <option value="categorie1"><b>Catégorie 1</b>: Admission et inscription</option>
+            <option value="categorie2"><b>Catégorie 2</b>: Programmes et Etudes</option>
+            <option value="categorie3"><b>Catégorie 3</b>: Financements et Aides</option>
+            <option value="categorie4"><b>Catégorie 4</b>: Ressources Universitaires</option>
+            <option value="categorie5"><b>Catégorie 5</b>: Vie Etudiantine</option>
+            <option value="categorie6"><b>Catégorie 6</b>: Administration et Contact</option>
+            <option value="categorie7"><b>Catégorie 7</b>: Développement Professionel</option>
+            <option value="categorie8">Autre</option>
+        </select>
+    </div>
+
+    <div id="items">
+        <div class="item" data-category="categorie1">
+            <h6 style="font: Normal 14px 'Oxygen', sans-serif; color: rgb(230, 161, 53);">Catégorie 1: Admission et
+                inscription</h6>
+            <details id="infoDetails" class="details-closed" aria-expanded="false">
+                <summary>
+                    <div class="contain-question">
+                        <p>Quelles sont les conditions nécessaires pour l'inscription ? <br> <b
+                                class="jaune">réponse</b> <i>👇cliquez sur ici</i> </p>
+                    </div>
+                </summary>
+                <div class="div">
+                    <u>Les conditions nécessaires pour s'inscrire à l'université de Douala sont:</u><br>
+                    <i><u>NB:</u> Les Brevets des Techniciens et les Baccalauréats Littéraires ne sont pas admis à la
+                        faculté des sciences</i>
+                    <ul>
+                        <li><u>Diplôme:</u> Etre titulaires d'un Diplôme de Baccalauréat ou d'un Diplôme équivalent</li>
+                        <li><u>Choix de la filière:</u>choisir une filière ou un programme d'études offert par
+                            l'université de Douala.</li>
+                        <li><u>Examen D'entrée:</u> passer un examen d'entrée pour certaines filières (selon les
+                            conditions spécifique de chaque filières).</li>
+                    </ul><br>
+                    <a href="image/IMG-20240901-WA0211.jpg">lire plus</a>
+                </div>
+            </details><br>
+            <details id="infoDetails" class="details-closed" aria-expanded="false">
+                <summary>
+                    <div class="contain-question">
+                        <p>Les documents nécessaires pour l'inscriptions ? <br> <b class="jaune">réponse</b>
+                            <i>👇cliquez sur ici</i> </p>
+                    </div>
+                </summary>
+                <div class="div">
+                    <p>Les documents nécessaires pour l'inscription à l'université de Douala sont:</p>
+                    <ul>
+                        <li>Une photocopie certifiée du probatoire</li>
+                        <li>Une photocopie certifiée du Baccalauréat</li>
+                        <li>Une photocopie certifiée de l'acte de naissances</li>
+                        <li>une fiche de d'inscription en ligne </li>
+                        <li>certificat médical délivré par le centre Medicosocial de l'université de Douala (CMS) </li>
+                        <li>reçu de paiement de la visite médicale</li>
+                        <li>reçu de paiement de la 1ère et la 2ème tranches</li>
+                        <li>Deux photos 4*4 identiques datant de moins de trois mois </li>
+                    </ul>
+                </div>
+            </details><br>
+            <details id="infoDetails" class="details-closed" aria-expanded="false">
+                <summary>
+                    <div class="contain-question">
+                        <p>Comment s'inscrire à l'Université de Douala ? <br> <b class="jaune">réponse</b> <i>👇cliquez
+                                sur ici</i> </p>
+                    </div>
+                </summary>
+                <div class="div">
+                    <p>Pour s'inscrire à la l'université de Douala ?</p>
+                    <h6>Etape 1:</h6>
+                    <ul>
+                        <li>Allez sur le site <a href="http://www.systhag-online.cm">SYSTHAG-ONLINE</a> et cliquez sur
+                            le bouton <b>Preinscription</b></li>
+                        <li> Choisissez l’établissement sollicité en cliquant sur l’intitulé
+                            portant le nom de cet établissement</li>
+                        <li>Acceptez la charte des pré-inscriptions et cliquez sur <b>suivant </b></li>
+                    </ul>
+                    <h6>Etape 2:</h6>
+                    <ul>
+                        <li> Remplissez le formulaire <b>informations personnelles</b> et cliquez
+                            sur <b> suivant </b></li>
+                    </ul>
+                    <h6>Etape 3:Scolarité</h3>
+                        <ul>
+                            <li>Remplissez le formulaire  scolarité  et cliquez sur <b> suivant </b></li>
+                        </ul>
+                        <h6>Etape 4: Profil academique</h6>
+                        <ul>
+                            <li>Remplissez le formulaire profil académique du candidat et
+                                cliquez sur <b> suivant </b></li>
+                        </ul>
+                        <h6>Etape 5:Aptitude Physique</h6>
+                        <ul>
+                            <li>Remplissez le formulaire  aptitudes physique et cliquez sur
+                                <b> suivant </b>
+                            </li>
+                        </ul>
+                        <h6>Etape 6:Parents ou tuteurs</h6>
+                        <ul>
+                            <li>Remplissez le formulaire <b> parents ou tuteurs </b> et cliquez sur <b>suivant</b></li>
+                        </ul>
+                        <h6>Etape 7:Vérification et Enregistrement</h6>
+                        <ul>
+                            <li> Vérifiez vos principales informations puis cliquez sur <b>« enregistrez ma
+                                    pré-inscription «</b></li>
+                        </ul>
+                        <h6>Etape 8:Paiement</h6>
+                        <ul>
+                            <li>
+                                Relevez vos paramètres de connexion qui vous seront par ailleurs
+                                envoyés via l’adresse électronique que vous avez renseigné à
+                                l’étape 1 et cliquez sur le bouton <b></b></li>
+                            <li>Allez dans la rubrique « ma pré-inscription « et cliquez sur <b>« voir mon état «</b>
+                            </li>
+                            <li>Télécharger votre fiche de pré-inscriptions et votre quitus de paiement</li>
+                            <li>
+                                Cliquez sur « payer votre pré-inscription dans une agence « afin de
+                                prendre un rendez-vous pour votre paiement à la banque</li>
+                        </ul>
+                </div>
+            </details><br>
+            <details id="infoDetails" class="details-closed" aria-expanded="false">
+                <summary>
+                    <div class="contain-question">
+                        <p>explication avec exemple des Etapes d'inscriptions ? <br> <b class="jaune">réponse</b> <i>👇cliquez sur
+                                ici</i> </p>
+                    </div>
+
+                </summary>
+                <div class="div">
+                    <p> </p><br>
+                    <p><a href="#" download="1725370378530.jpg"
+                            style="font-size: 15px;">Télécharger la procédures </a></p>
+                </div>
+            </details><br>
+            <details id="infoDetails" class="details-closed" aria-expanded="false">
+                <summary>
+                    <div class="contain-question">
+                        <p>Quels sont les délais inscriptions ? <br> <b class="jaune">réponse</b> <i>👇cliquez sur
+                                ici</i> </p>
+                    </div>
+
+                </summary>
+                <div class="div">
+                    <p>Les delais des inscriptions pour les étudiants du niveau 1 vont du 19 Août au 31 octobre
+                        2024-2025 </p><br>
+                    <p><a href="image/1725370378530.jpg" download="1725370378530.jpg"
+                            style="font-size: 15px;">Télécharger le communiquer </a></p>
+                </div>
+            </details><br>
+            <details id="infoDetails" class="details-closed" aria-expanded="false">
+                <summary>
+                    <div class="contain-question">
+                        <p>C'est quoi le Système LMD ?: <br> <b class="jaune">réponse</b> <i>👇cliquez sur details</i>
+                        </p>
+                    </div>
+                </summary>
+                <div class="div">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">CYCLE</th>
+                                <th scope="col">DUREE</th>
+                                <th scope="col">NIVEAU</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td><B>L</B> (LICENCE)</td>
+                                <td>06 semestres</td>
+                                <td> L1,L2,L3</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td><B>M</B> (MASTER) </td>
+                                <td>04 semestres</td>
+                                <td> M1,M2</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td><B>D</B> (DOCTORAT) </td>
+                                <td>06 semestres</td>
+                                <td>D1,D2,D3</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </details><br>
+        </div>
+        <!-- Programmes et Etudes -->
+        <div class="item" data-category="categorie2">
+            <h6 style="font: Normal 14px 'Oxygen', sans-serif; color: rgb(230, 161, 53);">Catégorie 2: Programmes et
+                Etudes</h6>
+            <details id="infoDetails" class="details-closed" aria-expanded="false">
+                <summary>
+                    <div class="contain-question">
+                        <p>Quels sont les programmes d'études disponibles à la faculté des sciences ? <br> <b
+                                class="jaune">réponse</b> <i>👇cliquez sur ici</i> </p>
+                    </div>
+                </summary>
+                <div class="div">
+
+                    <u><b>l'université de Douala propose une varieté de programmes d'études dans différentes disciplines
+                            parmis lesquelles:</b></u>
+                    <ul>
+                        <li>Faculté des Sciences:</li>
+                        <ul type="circle">
+                            <li>Licence en Mathematique-Informatique</li>
+                            <li>Licence en Biochimie</li>
+                            <li>Licence en Biologie des organismes animaux</li>
+                            <li>Licence en Biologie des organismes végétaux</li>
+                            <li>Licence en chimie</li>
+                            <li>Licence en Physique</li>
+                            <li>Licence en science de la terre</li>
+                        </ul>
+                        <li>Faculté des Sciences Économiques et de Gestion Appliquée</li>
+                        <ul type="circle">
+                            <li>Licence en Sciences Economique</li>
+                            <li>Licence en sciences de gestion </li>
+                            <li>Master en Methode informatique Appliquée a la gestion des Entreprises (MIAGE)</li>
+                            <li>Master en Qualité Sécurité et Environnement (QSE)</li>
+                        </ul>
+                        <li>Faculté de Médecine et des Sciences Pharmaceutiques</li>
+                        <ul type="circle">
+                            <li>Licence en Médecine</li>
+                            <li>Licence en Pharmacie</li>
+                            <li>Licenceen Biologie Médicale</li>
+                        </ul>
+                        <li>Faculté des Lettres et Science</li>
+                        <ul type="circle">
+                            <li>Licence en Histoire</li>
+                            <li>Licence en Geographie</li>
+                            <li>Licence en Science de L'éducation</li>
+                        </ul>
+                        <li>Faculté des sciences Agronomique et Technologie Alimentaires</li>
+                        <ul type="circle">
+                            <li>Licence en Agronomie</li>
+                            <li>Licence en Technologie Alimentaires</li>
+                        </ul>
+                    </ul><br>
+                    <div style="display: flex;align-items: center;justify-content: space-between;">
+                        <a href="image/IMG-20240901-WA0211.jpg">lire plus</a>
+                        <p><a href="image/1725370205954.jpg" download="1725370378530.jpg" style="font-size: 15px;">voir
+                                un exemple </a></p>
+                    </div>
+                </div>
+
+            </details><br>
+        </div>
+        <!-- Financement et Aides -->
+        <div class="item" data-category="categorie3">
+            <h6 style=" font: Normal 14px 'Oxygen', sans-serif; color: rgb(230, 161, 53);">Catégorie 3: Financement et
+                Aides</h6>
+            <details id="infoDetails" class="details-closed" aria-expanded="false">
+                <summary>
+                    <div class="contain-question">
+                        <p>Quel est le coût des études (inscription , visite medical , 1ère et 2ème tranches) ? <br> <b
+                                class="jaune">réponse</b> <i>👇cliquez sur ici</i> </p>
+
+                    </div>
+                </summary>
+                <div class="div">
+                    <u><b>Le coût des études superieures à l'universite de Douala est subdivisé comme suit :</b></u>
+                    <ul>
+                        <li>Inscription: 5000 fcfa <b></b></li>
+                        <li>Visite medical: 5000 fcfa</li>
+                        <li>1ère tranche: 25000 fcfa</li>
+                        <li>2ème tranche: 25000 fcfa</li>
+                    </ul>
+                </div>
+            </details><br>
+            <details id="infoDetails" class="details-closed" aria-expanded="false">
+                <summary>
+                    <div class="contain-question">
+                        <p>Existe-t-il des bourses ou des aides financières ? <br> <b class="jaune">réponse</b>
+                            <i>👇cliquez sur ici</i> </p>
+                        <!-- <button>2</button> -->
+                    </div>
+                </summary>
+                <div class="div">
+                    <p>Les Bourses disponibles sont les suivants:</p>
+                    <ul>
+                        <li>Bourse d’excellence : pour les étudiants ayant obtenu une moyenne
+                            supérieure à 14/20 au baccalauréat</li>
+                        <li>Bourse de mérite : pour des étudiants ayant obtenu une moyenne
+                            comprise entre 12 et 14/20</li>
+                        <li>Bourse sociale : pour les étudiants issus de familles défavorisées</li>
+                        <li> Bourse de recherche : pour les étudiants en Master ou doctorat réalisant
+                            des recherches innovantes</li>
+                        <li>Bourse d’Etat : pour des étudiants camerounais méritants</li>
+                    </ul>
+                </div>
+            </details>
+        </div>
+        <!-- Ressources Universitaires -->
+        <div class="item" data-category="categorie4">
+            <h6 style=" font: Normal 14px 'Oxygen', sans-serif; color: rgb(230, 161, 53);">Catégorie 4: Ressources
+                Universitaires</h6>
+            <details id="infoDetails" class="details-closed" aria-expanded="false">
+                <summary>
+                    <div class="contain-question">
+                        <p>Comment obtenir le certificat de scolarité ? <br> <b class="jaune">réponse</b> <i>👇cliquez
+                                sur ici</i> </p>
+                    </div>
+                </summary>
+                <div class="div">
+                    <p>Pour obtenir un certificat de scolarité à l'université de Douala :</p>
+                </div>
+            </details> <br>
+            <details id="infoDetails" class="details-closed" aria-expanded="false">
+                <summary>
+                    <div class="contain-question">
+                        <p>Comment accéder aux ressources de la bibliothèque universitaire ? <br> <b
+                                class="jaune">réponse</b> <i>👇cliquez sur ici</i> </p>
+                    </div>
+                </summary>
+                <div class="div">
+                    <p>....</p>
+                </div>
+                </summary>
+            </details>
+        </div>
+        <!-- Vie Etudiante -->
+        <div class="item" data-category="categorie5">
+            <h6 style=" font: Normal 14px 'Oxygen', sans-serif; color: rgb(230, 161, 53);">Catégorie 5: Vie Etudiantine
+            </h6>
+            <details id="infoDetails" class="details-closed" aria-expanded="false">
+                <summary>
+                    <div class="contain-question">
+                        <p>Comment participer aux activités assiociatives et culturelles ? <br> <b
+                                class="jaune">réponse</b> <i>👇cliquez sur ici</i> </p>
+                    </div>
+                </summary>
+
+                <div class="div">
+                    <p>pour participer aux activités assiociatives et culturelles à l'université de Douala</p>
+                    <h6>Etape 1:Recherchez les associations et clubs</h6>
+                    <span>Renseignez-vous sur les différentes associations et clubs
+                        existants à l’université, tels que les clubs de musique, de théâtre,
+                        de danse, de sport, etc</span>
+                    <h6>Etape 2:contactez les responsables</h6>
+                    <span>prenez contact avec les responsables des associations ou clubs qui vous intéressent pour
+                        obtenir plus d’informations sur leurs activités et les modalités de
+                        participation</span>
+                    <h6>Etape3:Assistez aux Réunions et Aux événements</h6>
+                    <span>Assistez aux
+                        réunions et aux événements organisés par les associations et clubs pour
+                        vous impliquer et cous faire connaître</span>
+                    <h6>Etape 4:Devenez membres</h6>
+                    <span>Devenez membre de l’association ou club qui
+                        Vous intéresse en remplissant les formulaires d’inscription et en payant les
+                        cotisations si nécessaire</span>
+                    <h6>Etape 5: Participez activement</h6>
+                    <span> Participez activement aux activités et aux
+                        événements organisés par l’association ou club pour vois impliquer et contribuer
+                        à son développement</span>
+                    <h6>Etape 6: créez votre propre association </h6>
+                    <span>Si vous avez une idée ou un projet, vous
+                        pouvez créer votre propre association ou club en suivant les procédures
+                        officielles de l’université</span>
+                </div>
+            </details><br>
+            <details id="infoDetails" class="details-closed" aria-expanded="false">
+                <summary style="color: rgb(230, 161, 53); font-weight: bold;">
+                    <div class="contain-question">
+                        <p>Comment obtenir une carte D'étudiant ? <br> <b class="jaune">réponse</b> <i>👇cliquez sur
+                                ici</i> </p>
+                    </div>
+                </summary>
+
+                <div class="div">
+                    <p>Pour obtenir une carte d'étudiant à l'université de Douala voici comment procéder:</p>
+                    <ul>
+                        <li><b>Inscription :</b> vous devez d’abord vous inscrire l’université de Douala pour
+                            l’année académique en cours</li>
+                        <li> Rendez-vous au service d’affaires étudiant : allez au service des affaires
+                            étudiant de l’université pour demander une carte d’étudiant</li>
+                        <li>Fournir les documents nécessaires : <ul>
+                                <li>une copie de votre inscription</li>
+                                <li>une copie de votre pièce d’identité</li>
+                                <li>deux photos identiques</li>
+                            </ul>
+                        </li>
+                        <li><b>Paiement de la carte :</b> vous devez payer les frais de carte, qui varient en
+                            fonction de l’université</li>
+                        <li><b>Attente de la réception :</b> une fois les documents et paiements effectués,
+                            vous devez attendre quelques jours pour que votre carte soit préparé</li>
+                        <li>Retrait du certificat vous pourrez ensuite retirer votre carte d’étudiant</li>
+                    </ul>
+                </div>
+
+            </details><br>
+            <details id="infoDetails" class="details-closed" aria-expanded="false">
+                <summary>
+                    <div class="contain-question">
+                        <p>Quels sont les logements étudiants disponibles ? <br> <b class="jaune">réponse</b>
+                            <i>👇cliquez sur ici</i> </p>
+                    </div>
+                </summary>
+                <div class="div">
+                    <p>....</p>
+                </div>
+            </details><br>
+        </div>
+        <!-- Administration et Contact -->
+        <div class="item" data-category="categorie6">
+            <h6 style=" font: Normal 14px 'Oxygen', sans-serif; color: rgb(230, 161, 53);">Catégorie 6: Administration
+                et Contact</h6>
+            <details id="infoDetails" class="details-closed" aria-expanded="false">
+                <summary>
+                    <div class="contain-question">
+                        <p>Comment contacter les enseignants ou le service administratif : <br> <b
+                                class="jaune">réponse</b> <i>👇cliquez sur ici</i> </p>
+                    </div>
+                </summary>
+                <div class="div">
+                    <p>....</p>
+                </div>
+
+            </details>
+        </div>
+        <!-- Développement Professionel -->
+        <div class="item" data-category="categorie7">
+            <h6 style=" font: Normal 14px 'Oxygen', sans-serif; color: rgb(230, 161, 53);">Catégorie 7: Développement
+                Professionel</h6>
+            <details id="infoDetails" class="details-closed" aria-expanded="false">
+                <summary>
+                    <div class="contain-question">
+                        <p>Quels sont les opportunités de mobilités académique: <br> <b class="jaune">réponse</b>
+                            <i>👇cliquez sur ici</i> </p>
+                    </div>
+                </summary>
+                <div class="div">
+                    <p>Les opportunités de mobilités académiques à l'Université de Douala comprennent: </p>
+                    <ul>
+                        <li><b>Le programme de mobilité académique intra-Afrique :</b> ce programme
+                            encourage la mobilité des étudiants, des stagiaires et du continent
+                            africain. Il offre une aide financière aux établissements supérieures en
+                            Afrique et subventionne des bourses d’études</li>
+                        <li><b>Partenariats internationaux :</b> l’Université de Douala a des partenariats
+                            avec d’autres universités à travers le monde, offrant ainsi des
+                            opportunités de mobilités académique pour les étudiants et les
+                            enseignants</li>
+                        <li><b>Échanges culturels :</b> l’Université de Douala offre des programmes
+                            d’échanges culturels qui permettent aux étudiants de découvrir de
+                            nouvelles cultures et de développer leurs compétences linguistiques</li>
+                        <li><b>Recherche collaborative :</b> l’Université de Douala participe à des projets de
+                            recherche collaboratifs avec d’autres universités et institutions, offrant
+                            aussi des opportunités de mobilités académique pour les chercheurs et
+                            les étudiants</li>
+                    </ul>
+                </div>
+            </details><br>
+            <details id="infoDetails" class="details-closed" aria-expanded="false">
+                <summary>
+                    <div class="contain-question">
+                        <p>Comment se passe les stages académiques ? <br> <b class="jaune">réponse</b> <i>👇cliquez sur
+                                details</i> </p>
+                    </div>
+                </summary>
+                <div class="div">
+                    <p>....</p>
+                </div>
+            </details><br>
+        </div>
+        <div class="item" data-category="categorie8">
+            <h6 style=" font: Normal 14px 'Oxygen', sans-serif; color: rgb(230, 161, 53);">Autre</h6>
+            <details id="infoDetails" class="details-closed" aria-expanded="false">
+                <summary>
+                    <div class="contain-question">
+                        <p>Dernier programme annuel de l'université ? <br> <b class="jaune">réponse</b> <i>👇cliquez
+                                sur details</i> </p>
+                    </div>
+                </summary>
+                <div class="img">
+
+                    <img src="image/IMG-20240902-WA0067.jpg" alt="" width="350px" height="300px"><br>
+                    <img src="image/1725209502767.jpg" alt="" width="350px" height="300px">
+
+                </div>
+            </details><br>
+        </div>
+    </div>
+    <div style="zoom: 0.7;">
+        
+    <div class="container">
+        <h1>Les informations vous ont-elles été utiles ?</h1>
+        <button id="yesButton">Oui</button>
+        <button id="noButton">Non</button>
+    </div>
+
+    <form id="questionForm">
+        <label for="question">Votre question ici :</label>
+        <textarea id="question" name="question" required></textarea>
+        <button type="submit">Envoyer</button>
+    </form>
+    </div>
+
+    <SECTion class="commentaires" id="A-propos" style="zoom: 0.7;">
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="section-title">
+                    <h1 class="display-4 fw-semibold">A-propos De Universite de Douala </h1>
+                    <div class="line"></div>
+                    <p>Découvrez l'Université de Douala en images </p>
+                </div>
+            </div>
+        </div>
+        <div id="carouselExampleDark" class="carousel carousel-dark slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                    <img src="image/Faculte.jpg" class="d-block w-100" height="450px" width="400px" alt="...">
+                    <div class="carousel-caption d-none d-md-block ">
+                        <h5 class="white">First image</h5>
+                        <p class="color " style="font-weight: bold;font-size: 20px;">faculté des sciences</p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="image/hero.jpg" class="d-block w-100" height="450px" width="400px" alt="...">
+                    <div class="carousel-caption d-none d-md-block ">
+                        <h5 class="white"> Second image</h5>
+                        <p class="color " style="font-weight: bold;font-size: 20px;"> l'entré du campus 1 de pk17</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="image/test.jpg" class="d-block w-100" height="450px" width="400px" alt="...">
+                    <div class="carousel-caption d-none d-md-block ">
+                        <h5 class="white">Third image</h5>
+                        <p class="color " style="font-weight: bold;font-size: 20px; ">Bureau administratif de
+                            l'université à Ange raphael </p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </SECTion>
+    <section id="actualités" style="zoom: 0.7;">
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="section-title">
+                    <h1 class="display-4 fw-semibold">Actualités</h1>
+                    <div class="line"></div>
+                    <p>Ne manquez rien : les actualités les plus recentes et les plus importantes </p>
+
+                </div>
+            </div>
+    </section>
+
+    <section id="cours" style="zoom: 0.7;">
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="section-title">
+                    <h1 class="display-4 fw-semibold">Cours</h1>
+                    <div class="line"></div>
+                    <p>Accédez au cours sur la filière informatique disponible exclusivement sur l'application
+                        <b>FLAG</b> </p>
+                    <button><a href="https://drive.google.com/file/d/1N7E4zg6V3L08wkpAztWwsSnBz02qaNv8/view?usp=drivesdk" target="_blank">Téléchargez l'Application FLAG</a></button>
+                </div>
+            </div>
+        </div>
+        <div class="img-flag">
+            <img src="image/Screenshot_20240905-173326.jpg" alt="Accueil de l'application Flag" height="330px" width="250px">
+            <img src="image/Screenshot_20240905-173336.jpg" alt="menu de l'application flag" height="330px" width="250px">
+            <img src="image/Screenshot_20240905-173352.jpg" alt="contenu de l'application flag" height="330px" width="250px">
+        </div>
+    </section>
+    <a href="#" style="cursor: pointer;">
+        <img src="image/BackgroundEraser_20240821_222056485.png" height="80px" width="80px" class="back-to-top"
+            alt=""></a>
+    <section class="footer"
+        style="padding: 10px;background-color: rgb(11, 57, 96);width: auto; color: white; zoom: 0.6;"><br>
+        <div class="head-footer" style="display: flex; align-items: center; justify-content: space-between;">
+            <div>
+                <a href="#"><img src="image/IMG-20240818-WA0036.jpg" height="40px" width="40px" alt=""
+                        style="border-radius: 10px;"></a>
+                <caption>ALLINFO</caption><br>
+                <br>
+            </div>
+            <Button class="btne"><a href="image/IMG-20240901-WA0211.jpg">Téléchargez la fiche de
+                    renseignement</a></Button>
+        </div>
+        <div class="racourcir">
+            <div class="liens">
+                <h4 style="color: black; font: Normal 20px 'Oxygen', sans-serif; color: rgb(230, 161, 53);">liens utiles
+                </h4>
+                <ul>
+                    <li><a href="https://www.univ-douala.cm" class="decor-for-a">https://www.univ-douala.cm</a></li>
+                    <li><a href="http://www.systhag-online.cm" class="decor-for-a">http://www.systhag-online.cm</a></li>
+                    <li><a href="https://www.fs-univ-dla.com" class="decor-for-a">https://www.fs-univ-dla.com</a></li>
+                </ul>
+
+            </div>
+            <div class="donne">
+
+                <h4 style="color: black;  font: Normal 20px 'Oxygen', sans-serif; color: rgb(230, 161, 53);">la faculté
+                    des sciences de l'université de douala divisé en 04 campus</h4>
+                <ul>
+                    <li><strong>Campus 1:</strong> Bassa CITE SIC</li>
+                    <li><strong>Campus 2:</strong> NDOGBONG</li>
+                    <li><strong>Campus 3:</strong> Pk17</li>
+                    <li><strong>Campus 4:</strong> Akwa</li>
+                </ul>
+            </div>
+            <div class="info">
+
+                <h4 style="color: black; font: Normal 20px 'Oxygen', sans-serif; color: rgb(230, 161, 53);">informations
+                    utiles </h4>
+                <ul>
+                    <li><strong>email: <a
+                                href="mailto:facsiences@univ-douala.com" class="decor-for-a">facsiences@univ-douala.com</a></strong></li>
+                    <li class="decor-for-a"><strong>B.P.24157</strong></li>
+                    <li><strong>site web:</strong> <a href="https://www.fs-univ-dla.com" class="decor-for-a">https://www.fs-univ-dla.com</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="localisation">
+
+           
+            <button class="btn" type="button"><a href=" https://g.co/kgs/vv7Jkhd"
+                    style="text-decoration: none;color: white;text-align: center;flex-direction: column; display: flex; font-size: 20px;font-family:Arial, Helvetica, sans-serif; cursor: pointer;"> <img src="image/itineraire.PNG" width="500px" height="200px" alt=""><i
+class="bi bi-geo-alt me-2 jaune fs-2"></i>Itinéraire</a></button>
+        </div><br>
+        <hr>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row g-4 justify-content-between">
+                    <div class="col-auto">
+                        <p class="mb-0">copyright KTHL @2024</p>
+                    </div>
+                    <div class="col-auto">
+                        <p class="mb-0">Design by <a href="#" class="jaune">kthl</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCRVmXL-MwV4niqOZPj5jBOSWxEEDW8QrU",
+            authDomain: "allinfo-4fd2a.firebaseapp.com",
+            projectId: "allinfo-4fd2a",
+            storageBucket: "allinfo-4fd2a.appspot.com",
+            messagingSenderId: "432534049190",
+            appId: "1:432534049190:web:818a06c9b95e410017bf67"
+        };
+
+        // Initialize Firebase
+        // Initialiser Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+        // Écouter l'événement de soumission du formulaire
+        const form = document.getElementById('questionForm');
+        form.addEventListener('submit', (event) => {
+            event.preventDefault(); // Empêcher le rechargement de la page
+
+            // Récupérer la valeur de la question
+            const question = document.getElementById('question').value;
+
+            // Enregistrer la question dans la base de données Firebase
+            database.ref('questions').push({
+                question: question,
+                timestamp: firebase.database.ServerValue.TIMESTAMP
+            }).then(() => {
+                alert('Question enregistrée avec succès');
+                // Vous pouvez afficher un message de confirmation à l'utilisateur ici
+            }).catch((error) => {
+                console.error('Erreur lors de l\'enregistrement de la question :', error);
+            });
+        });
+    </script>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<html>
+<head>
+<title>Main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #7a7e85;}
+.s4 { color: #6aab73;}
+.s5 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">lang</span><span class="s2">.</span><span class="s1">Math</span><span class="s2">; </span><span class="s3">// Importation de la bibliothèque Math</span>
+
+ <span class="s0">class </span><span class="s1">Complexe </span><span class="s2">{</span>
+    <span class="s0">private double </span><span class="s1">re</span><span class="s2">; </span><span class="s3">// Attributs privés pour la partie réelle</span>
+    <span class="s0">private double </span><span class="s1">im</span><span class="s2">; </span><span class="s3">// Attributs privés pour la partie imaginaire</span>
+
+    <span class="s0">public </span><span class="s1">Complexe</span><span class="s2">(</span><span class="s0">double </span><span class="s1">re</span><span class="s2">, </span><span class="s0">double </span><span class="s1">im</span><span class="s2">) { </span><span class="s3">// Constructeur</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">re </span><span class="s2">= </span><span class="s1">re</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">im </span><span class="s2">= </span><span class="s1">im</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s3">// Getters</span>
+    <span class="s0">public double </span><span class="s1">getRe</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">re</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public double </span><span class="s1">getIm</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">im</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s3">// Méthode pour calculer le module</span>
+    <span class="s0">public double </span><span class="s1">module</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">Math</span><span class="s2">.</span><span class="s1">sqrt</span><span class="s2">(</span><span class="s1">re </span><span class="s2">* </span><span class="s1">re </span><span class="s2">+ </span><span class="s1">im </span><span class="s2">* </span><span class="s1">im</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s3">// Méthode pour calculer l'argument</span>
+    <span class="s0">public double </span><span class="s1">argument</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s1">Math</span><span class="s2">.</span><span class="s1">atan2</span><span class="s2">(</span><span class="s1">im</span><span class="s2">, </span><span class="s1">re</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s3">// Méthode pour calculer le conjugué</span>
+    <span class="s0">public </span><span class="s1">Complexe conjuguer</span><span class="s2">() {</span>
+        <span class="s0">return new </span><span class="s1">Complexe</span><span class="s2">(</span><span class="s1">re</span><span class="s2">, -</span><span class="s1">im</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s3">// Addition de deux nombres complexes</span>
+    <span class="s0">public </span><span class="s1">Complexe add</span><span class="s2">(</span><span class="s1">Complexe x</span><span class="s2">) {</span>
+        <span class="s0">return new </span><span class="s1">Complexe</span><span class="s2">(</span><span class="s0">this</span><span class="s2">.</span><span class="s1">re </span><span class="s2">+ </span><span class="s1">x</span><span class="s2">.</span><span class="s1">re</span><span class="s2">, </span><span class="s0">this</span><span class="s2">.</span><span class="s1">im </span><span class="s2">+ </span><span class="s1">x</span><span class="s2">.</span><span class="s1">im</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s3">// Soustraction de deux nombres complexes</span>
+    <span class="s0">public </span><span class="s1">Complexe subtract</span><span class="s2">(</span><span class="s1">Complexe x</span><span class="s2">) {</span>
+        <span class="s0">return new </span><span class="s1">Complexe</span><span class="s2">(</span><span class="s0">this</span><span class="s2">.</span><span class="s1">re </span><span class="s2">- </span><span class="s1">x</span><span class="s2">.</span><span class="s1">re</span><span class="s2">, </span><span class="s0">this</span><span class="s2">.</span><span class="s1">im </span><span class="s2">- </span><span class="s1">x</span><span class="s2">.</span><span class="s1">im</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s3">// Multiplication de deux nombres complexes</span>
+    <span class="s0">public </span><span class="s1">Complexe multiply</span><span class="s2">(</span><span class="s1">Complexe x</span><span class="s2">) {</span>
+        <span class="s0">return new </span><span class="s1">Complexe</span><span class="s2">(</span>
+                <span class="s0">this</span><span class="s2">.</span><span class="s1">re </span><span class="s2">* </span><span class="s1">x</span><span class="s2">.</span><span class="s1">re </span><span class="s2">- </span><span class="s0">this</span><span class="s2">.</span><span class="s1">im </span><span class="s2">* </span><span class="s1">x</span><span class="s2">.</span><span class="s1">im</span><span class="s2">,</span>
+                <span class="s0">this</span><span class="s2">.</span><span class="s1">re </span><span class="s2">* </span><span class="s1">x</span><span class="s2">.</span><span class="s1">im </span><span class="s2">+ </span><span class="s0">this</span><span class="s2">.</span><span class="s1">im </span><span class="s2">* </span><span class="s1">x</span><span class="s2">.</span><span class="s1">re</span>
+        <span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s3">// Division de deux nombres complexes</span>
+    <span class="s0">public </span><span class="s1">Complexe divide</span><span class="s2">(</span><span class="s1">Complexe x</span><span class="s2">) {</span>
+        <span class="s0">double </span><span class="s1">denominator </span><span class="s2">= </span><span class="s1">x</span><span class="s2">.</span><span class="s1">re </span><span class="s2">* </span><span class="s1">x</span><span class="s2">.</span><span class="s1">re </span><span class="s2">+ </span><span class="s1">x</span><span class="s2">.</span><span class="s1">im </span><span class="s2">* </span><span class="s1">x</span><span class="s2">.</span><span class="s1">im</span><span class="s2">;</span>
+        <span class="s0">return new </span><span class="s1">Complexe</span><span class="s2">(</span>
+                <span class="s2">(</span><span class="s0">this</span><span class="s2">.</span><span class="s1">re </span><span class="s2">* </span><span class="s1">x</span><span class="s2">.</span><span class="s1">re </span><span class="s2">+ </span><span class="s0">this</span><span class="s2">.</span><span class="s1">im </span><span class="s2">* </span><span class="s1">x</span><span class="s2">.</span><span class="s1">im</span><span class="s2">) / </span><span class="s1">denominator</span><span class="s2">,</span>
+                <span class="s2">(</span><span class="s0">this</span><span class="s2">.</span><span class="s1">im </span><span class="s2">* </span><span class="s1">x</span><span class="s2">.</span><span class="s1">re </span><span class="s2">- </span><span class="s0">this</span><span class="s2">.</span><span class="s1">re </span><span class="s2">* </span><span class="s1">x</span><span class="s2">.</span><span class="s1">im</span><span class="s2">) / </span><span class="s1">denominator</span>
+        <span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s3">// Méthode toString pour afficher le nombre complexe</span>
+    <span class="s1">@Override</span>
+    <span class="s0">public </span><span class="s1">String toString</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s4">&quot;(&quot; </span><span class="s2">+ </span><span class="s1">re </span><span class="s2">+ </span><span class="s4">&quot; + &quot; </span><span class="s2">+ </span><span class="s1">im </span><span class="s2">+ </span><span class="s4">&quot;i)&quot;</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public static void </span><span class="s1">main</span><span class="s2">(</span><span class="s1">String</span><span class="s2">[] </span><span class="s1">args</span><span class="s2">) {</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Hello and welcome!&quot;</span><span class="s2">);</span>
+
+
+        <span class="s1">Complexe c1 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Complexe</span><span class="s2">(</span><span class="s5">2</span><span class="s2">, </span><span class="s5">3</span><span class="s2">);</span>
+        <span class="s1">Complexe c2 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Complexe</span><span class="s2">(</span><span class="s5">1</span><span class="s2">, -</span><span class="s5">2</span><span class="s2">);</span>
+
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;c1: &quot; </span><span class="s2">+ </span><span class="s1">c1</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;c2: &quot; </span><span class="s2">+ </span><span class="s1">c2</span><span class="s2">);</span>
+
+
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;c1 + c2: &quot; </span><span class="s2">+ </span><span class="s1">c1</span><span class="s2">.</span><span class="s1">add</span><span class="s2">(</span><span class="s1">c2</span><span class="s2">));</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;c1 - c2: &quot; </span><span class="s2">+ </span><span class="s1">c1</span><span class="s2">.</span><span class="s1">subtract</span><span class="s2">(</span><span class="s1">c2</span><span class="s2">));</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;c1 * c2: &quot; </span><span class="s2">+ </span><span class="s1">c1</span><span class="s2">.</span><span class="s1">multiply</span><span class="s2">(</span><span class="s1">c2</span><span class="s2">));</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;c1 / c2: &quot; </span><span class="s2">+ </span><span class="s1">c1</span><span class="s2">.</span><span class="s1">divide</span><span class="s2">(</span><span class="s1">c2</span><span class="s2">));</span>
+
+
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Module de c1: &quot; </span><span class="s2">+ </span><span class="s1">c1</span><span class="s2">.</span><span class="s1">module</span><span class="s2">());</span>
+
+
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Argument de c1: &quot; </span><span class="s2">+ </span><span class="s1">c1</span><span class="s2">.</span><span class="s1">argument</span><span class="s2">());</span>
+
+
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s4">&quot;Conjugué de c1: &quot; </span><span class="s2">+ </span><span class="s1">c1</span><span class="s2">.</span><span class="s1">conjuguer</span><span class="s2">());</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>

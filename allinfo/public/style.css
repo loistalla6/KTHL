@@ -1,0 +1,210 @@
+*{
+    box-sizing: border-box;
+}
+
+.contain-question{
+    position: relative;
+    width: auto;
+    height: auto;
+    background-color: rgb(11, 57, 96);
+    color: white;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    padding: 10px;
+    border-radius: 25px;
+    zoom: 0.6;
+  font: Normal 20px 'Oxygen', sans-serif;
+}
+.offcanvas-body .navbar-nav .nav-item:hover {
+    background-color: rgb(230, 161, 53);
+}
+.contain-question:hover{
+    background-color: rgb(230, 161, 53); 
+    backdrop-filter: blur(5px);
+}
+.contain-question:hover b{
+    color: black;
+}
+.section-title{
+    padding: 5px;
+}
+summary{
+    list-style: none;
+}
+.color{
+    color: black;
+}
+i{
+    font-size: 13px;
+}
+.jaune{
+    color: rgb(230, 161, 53);
+}
+#acs{
+    font-size: 20px;
+    font: 2.5em sans-serif;
+    color: rgb(230, 161, 53);
+}
+.back-to-top{
+    position: fixed;
+    z-index: 10;
+    bottom: 40px;
+    right: 20px;
+}
+.back-to-top:hover{
+transform:translateY(-4px);
+}
+.div{
+    color: #2d2d2d;
+  position: relative;
+  font: Normal 14px 'Oxygen', sans-serif;
+  padding: 20px;
+}
+.fg{
+    font-size: 1rem;
+    margin: 10px;
+    padding: 10px;
+}
+#details:hover{
+    color: rgb(11, 57, 96);
+}
+.change-div{
+    background-color: rgb(81, 57, 96);
+}
+
+#questionForm {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    background-color: rgb(230, 161, 53);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+.img{
+    height: auto;
+    width: auto;
+}
+.section-title button a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+.section-title button{
+    background-color: rgb(230, 161, 53);
+    border-radius: 10px;
+    padding: 10px;
+}
+.contain-question button{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    border-radius: 50px;
+    height: auto;
+}
+
+
+
+#items {
+    margin-top: 20px;
+}
+
+.item {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+select{
+    padding: 10px;
+    width: 200px;
+    background-color: transparent;
+}
+option{
+    background-color: rgb(11, 57, 96);
+}
+select:focus{
+    border: #aaa;
+    box-shadow: 0 0 10 rgb(0,0,0,0.2);
+}
+option:hover{
+    background-color: aqua;
+}
+option:checked{
+    background-color: #333333;
+    color: white;
+}
+
+
+
+.container {
+    text-align: center;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.localisation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.racourcir{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+}
+
+.btne{
+    background-color:rgb(230,161,53);
+    color:white;
+    height: auto;
+    padding: 15px;
+}
+.btne a{
+    text-decoration: none;
+    color:white;
+}
+.btne a:hover{
+    color: rgb(11, 57, 96);
+}
+
+.decor-for-a{
+    text-decoration: none;
+    color: white;
+}
+.decor-for-a:hover{
+    color: rgb(230, 161, 53);
+    transform: translateX(10px);
+}
+.img-flag{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 45px;
+    background: linear-gradient(rgba(49, 60, 70, 0.405), rgba(0, 0, 0, 0.438)), url("image/Faculte.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    height: 500px;
+}
