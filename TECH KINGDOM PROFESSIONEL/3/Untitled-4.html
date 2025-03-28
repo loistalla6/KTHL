@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Dynamique</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Styles de base */
+.menu-principal {
+    font-family: 'Roboto', sans-serif;
+    background: #2c3e50;
+}
+
+.menu-principal > ul {
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.menu-principal li {
+    position: relative;
+}
+
+.menu-principal a {
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    display: block;
+    transition: all 0.3s;
+}
+
+/* Sélecteurs combinés (Pages 34-38) */
+.menu-principal > ul > li:hover > a {
+    background: #3498db;
+}
+
+.avec-sousmenu:hover > .sous-menu {
+    display: block;
+    animation: fadeIn 0.3s;
+}
+
+.sous-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #34495e;
+    min-width: 200px;
+    padding: 0;
+    list-style: none;
+}
+
+/* Styles avancés (Pages 44-46) */
+.sous-menu li:not(:last-child) {
+    border-bottom: 1px solid #46627f;
+}
+
+.sous-menu li:first-child a {
+    color: #f1c40f;
+}
+
+.sous-menu li:last-child a {
+    font-weight: bold;
+}
+
+/* Animation (Pages 89-94) */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Media Query Mobile (Pages 80-88) */
+@media (max-width: 768px) {
+    .menu-principal > ul {
+        flex-direction: column;
+    }
+    
+    .sous-menu {
+        position: static;
+        width: 100%;
+    }
+}
+    </style>
+</head>
+<body>
+    <nav class="menu-principal">
+        <ul>
+            <li><a href="#">Accueil</a></li>
+            <li class="avec-sousmenu">
+                <a href="#">Services</a>
+                <ul class="sous-menu">
+                    <li><a href="#">Web Design</a></li>
+                    <li><a href="#">Développement</a></li>
+                    <li><a href="#">SEO</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
