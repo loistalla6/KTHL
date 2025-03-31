@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Parrain Académique - À Propos</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body class="bg-gray-50 font-sans">
+
+    <!-- Header avec Navigation -->
+    <header class="bg-white shadow-md fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center px-4 py-4">
+            <!-- Logo -->
+            <a href="#" class="flex items-center">
+                <img src="logo.jpg" alt="Logo Le Parrain Académique" class="h-16 w-16 rounded-full">
+            </a>
+            <!-- Navigation -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="accueil.html" class="text-gray-700 hover:text-red-600 transition duration-300">Accueil</a>
+                <a href="Formations.html" class="text-gray-700 hover:text-red-600 transition duration-300">Formations</a>
+                <a href="contact.html" class="text-gray-700 hover:text-red-600 transition duration-300">À Propos</a>
+                <a href="actualite.html" class="text-gray-700 hover:text-red-600 transition duration-300">Actualités</a>
+                <a href="help.html" class="text-gray-700 hover:text-red-600 transition duration-300">Aide</a>
+                <a href="profil.html" class="text-gray-700 hover:text-red-600 transition duration-300">Profil</a>
+            </nav>
+            <!-- Bouton Se Connecter -->
+            <a href="login.html" class="bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition duration-300">
+                Se Connecter
+            </a>
+            <!-- Menu Mobile -->
+            <button id="menuBtn" class="md:hidden text-gray-700 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Menu Mobile Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white shadow-lg px-4 py-2">
+            <a href="accueil.html" class="block text-gray-700 hover:text-red-600 py-2">Accueil</a>
+            <a href="formations.html" class="block text-gray-700 hover:text-red-600 py-2">Formations</a>
+            <a href="contact.html" class="block text-gray-700 hover:text-red-600 py-2">À Propos</a>
+            <a href="actualite.html" class="text-gray-700 hover:text-red-600 transition duration-300">Actualités</a>
+            <a href="help.html" class="block text-gray-700 hover:text-red-600 py-2">Aide</a>
+            <a href="profil.html" class="block text-gray-700 hover:text-red-600 py-2">Profil</a>
+        </div>
+    </header>
+
+
+
+    <!-- Section Hero -->
+    <section class="bg-cover bg-center h-screen relative" style="background-image: url('images/hero-about.jpg');">
+        <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-white text-center">
+            <h1 class="text-5xl font-bold animate__animated animate__fadeInDown">À Propos de Nous</h1>
+            <p class="text-xl mt-4 animate__animated animate__fadeInUp animate__delay-1s">Découvrez notre mission, notre vision et notre histoire.</p>
+        </div>
+    </section>
+
+    <!-- Section Historique -->
+    <section id="historique" class="py-16 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-red-600 mb-8 animate__animated animate__fadeIn">Notre Histoire</h2>
+            <p class="text-gray-700 mb-6 animate__animated animate__fadeInUp">Fondée en 2023, Le Parrain Académique a commencé comme une petite start-up et est rapidement devenue un leader dans le domaine de la formation académique et professionnelle. Notre mission est d'accompagner les étudiants et les professionnels dans leur parcours éducatif en leur offrant des solutions adaptées à leurs besoins.</p>
+            <p class="text-gray-700 animate__animated animate__fadeInUp animate__delay-1s">Grâce à notre équipe dévouée et à nos partenariats stratégiques, nous continuons à croître et à innover pour répondre aux défis du marché éducatif.</p>
+        </div>
+    </section>
+
+    <!-- Section Valeurs -->
+    <section id="valeurs" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-red-600 mb-8 animate__animated animate__fadeIn">Nos Valeurs</h2>
+            <p class="text-gray-700 mb-4 animate__animated animate__fadeInUp">Nous croyons en l'importance de l'éducation accessible et de qualité pour tous.</p>
+            <p class="text-gray-700 mb-4 animate__animated animate__fadeInUp animate__delay-1s">L'innovation est au cœur de notre approche pédagogique, nous nous engageons à utiliser les meilleures pratiques pour former nos étudiants.</p>
+            <p class="text-gray-700 mb-4 animate__animated animate__fadeInUp animate__delay-2s">Nous valorisons la collaboration et le partage des connaissances entre étudiants et professionnels.</p>
+        </div>
+    </section>
+
+    <!-- Section Promoteur -->
+    <section id="promoteur" class="py-16 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-red-600 mb-8 animate__animated animate__fadeIn">Rencontrez Notre Promoteur</h2>
+            <div class="bg-white rounded-lg shadow-lg p-6 max-w-sm mx-auto animate__animated animate__zoomIn">
+                <img src="images/blank-profile-picture.png" alt="Photo Promoteur" width="150" height="150" class="rounded-full mx-auto mb-4">
+                <h3 class="text-xl font-semibold">Mr Mark</h3>
+                <p class="text-gray-600">Promoteur</p>
+                <p class="mt-4 text-gray-700">Avec une passion pour l'éducation et une vision claire, Mr Mark a fondé Le Parrain Académique pour offrir des formations de qualité aux étudiants et professionnels.</p>
+            </div>
+        </div>
+    </section>
+
+<!-- Section Contact -->
+<section id="contact" class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Formulaire de Contact -->
+        <div>
+            <h2 class="text-xl font-bold mb-4 text-center">Formulaire de Contact</h2>
+            <form id="contactForm" action="#" method="#">
+                <div class="mb-4">
+                    <label for="name" class="block text-sm font-medium text-gray-700">Nom :</label>
+                    <input type="text" id="name" required placeholder="" 
+                        class="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring focus:ring-blue-500"
+                    />
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email :</label>
+                    <input type="email" id="email" required placeholder=""
+                        class="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring focus:ring-blue-500"
+                    />
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-sm font-medium text-gray-700">Message :</label>
+                    <textarea id="message" rows="3" required placeholder=""
+                        class="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring focus:ring-blue-500"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300">Envoyer</button>
+            </form>
+        </div>
+
+        <!-- Informations de Contact -->
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h2 class="text-xl font-bold mb-4 text-center">Informations de Contact</h2>
+            <p class="mb-4">Pour toute question ou demande d'information, n'hésitez pas à nous contacter par email ou téléphone.</p>
+            <p class="font-semibold">Email : contact@parrainacademique.com</p>
+            <p class="font-semibold">Téléphone : +237 123 456 789</p>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="bg-red-600 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Informations de Contact -->
+                <div>
+                    <h5 class="text-xl font-bold mb-4">Contactez-Nous</h5>
+                    <p class="text-gray-200">Adresse : Ange Raphaël, Campus 1, Université de Douala</p>
+                    <p class="text-gray-200">Téléphone : <a href="tel:+237652923409" class="underline">+237 652 92 34 09</a></p>
+                    <p class="text-gray-200">Email : <a href="mailto:contact@leparrainacademique.com" class="underline">contact@leparrainacademique.com</a></p>
+                </div>
+                <!-- Liens Rapides -->
+                <div>
+                    <h5 class="text-xl font-bold mb-4">Liens Rapides</h5>
+                    <ul class="space-y-2">
+                        <li><a href="accueil.html" class="text-gray-200 hover:text-white">Accueil</a></li>
+                        <li><a href="formations.html" class="text-gray-200 hover:text-white">Formations</a></li>
+                        <li><a href="contact.html" class="text-gray-200 hover:text-white">À Propos</a></li>
+                        <li><a href="help.html" class="text-gray-200 hover:text-white">Aide</a></li>
+                        <li><a href="#" class="text-gray-200 hover:text-white">Mentions Légales</a></li>
+                    </ul>
+                </div>
+                <!-- Réseaux Sociaux -->
+                <div>
+                    <h5 class="text-xl font-bold mb-4">Suivez-Nous</h5>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-200 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-200 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-200 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-200 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <!-- Newsletter -->
+                <div>
+                    <h5 class="text-xl font-bold mb-4">Newsletter</h5>
+                    <form class="flex">
+                        <input type="email" placeholder="Votre email" class="w-full p-2 rounded-l-lg focus:outline-none text-gray-700">
+                        <button type="submit" class="bg-white text-red-600 px-4 py-2 rounded-r-lg hover:bg-gray-100 transition duration-300">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <p>&copy; 2023 Le Parrain Académique. Tous droits réservés.</p>
+                <p>Conçu par <strong><a href="https://wa.me/237690372862">Herman</a> </strong></p>
+            </div>
+        </div>
+    </footer>
+
+<!-- Script pour le Menu Mobile -->
+<script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
+
+</body>
+</html>

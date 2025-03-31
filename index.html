@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>site  minimaliste portfolio</title>
+    <link rel="stylesheet" href="style.css"><!-- css externe-->
+    <style>
+     /*code css interne*/
+     body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        
+        /* Sélecteur de classe */
+        .projet {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+            background: white;
+            width: 30%;
+        }
+        .galerie{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        @media (max-width: 768px) {
+            .galerie{
+                flex-direction: column;
+                justify-content: center;
+            }
+            .projet{
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+     <!-- CSS INLINE -->
+     <header style="text-align: center; color: #2c3e50; margin-bottom: 30px;">
+        <h1 style="font-size: 2.5em;">KTHL</h1>
+    </header>
+
+    <section id="apropos">
+        <h2>À propos</h2>
+        <p>Designer graphique spécialisée en UX/UI avec 5 ans d'expérience.</p>
+    </section>
+
+    <div class="galerie">
+        <div class="projet">
+            <img src="1672979100089.jpg" alt="Site e-commerce" style="width: 100%; border-radius: 8px; height: 250px;">
+            <h3>Boutique en ligne</h3>
+            <p>Création d'une interface utilisateur responsive.</p>
+        </div>
+        <div class="projet">
+            <img src="access-connection-data-1262974.jpg" alt="Site e-commerce" style="width: 100%; border-radius: 8px; height: 250px;">
+            <h3>marketing digital</h3>
+            <p>publication des annonces facebook.</p>
+        </div>
+        <div class="projet">
+            <img src="Atayeh.jpg" alt="Site e-commerce" style="width: 100%; border-radius: 8px;  height: 250px;">
+            <h3>E-learning</h3>
+            <p>Création site web.</p>
+        </div>
+    </div>
+</body>
+</html>

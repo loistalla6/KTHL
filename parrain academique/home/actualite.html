@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actualités - Formation et Remise à Niveau</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <!-- Header avec Navigation -->
+  <header class="bg-white shadow-md fixed w-full z-50">
+    <div class="container mx-auto flex justify-between items-center px-4 py-4">
+        <!-- Logo -->
+        <a href="#" class="flex items-center">
+            <img src="logo.jpg" alt="Logo Le Parrain Académique" class="h-16 w-16 rounded-full">
+        </a>
+        <!-- Navigation -->
+        <nav class="hidden md:flex space-x-6">
+            <a href="accueil.html" class="text-gray-700 hover:text-red-600 transition duration-300">Accueil</a>
+            <a href="Formations.html" class="text-gray-700 hover:text-red-600 transition duration-300">Formations</a>
+            <a href="contact.html" class="text-gray-700 hover:text-red-600 transition duration-300">À Propos</a>
+            <a href="actualite.html" class="text-gray-700 hover:text-red-600 transition duration-300">Actualités</a>
+            <a href="help.html" class="text-gray-700 hover:text-red-600 transition duration-300">Aide</a>
+            <a href="profil.html" class="text-gray-700 hover:text-red-600 transition duration-300">Profil</a>
+        </nav>
+        <!-- Bouton Se Connecter -->
+        <a href="login.html" class="bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition duration-300">
+            Se Connecter
+        </a>
+        <!-- Menu Mobile -->
+        <button id="menuBtn" class="md:hidden text-gray-700 focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+        </button>
+    </div>
+    <!-- Menu Mobile Dropdown -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white shadow-lg px-4 py-2">
+        <a href="accueil.html" class="block text-gray-700 hover:text-red-600 py-2">Accueil</a>
+        <a href="formations.html" class="block text-gray-700 hover:text-red-600 py-2">Formations</a>
+        <a href="contact.html" class="block text-gray-700 hover:text-red-600 py-2">À Propos</a>
+        <a href="actualite.html" class="text-gray-700 hover:text-red-600 transition duration-300">Actualités</a>
+        <a href="help.html" class="block text-gray-700 hover:text-red-600 py-2">Aide</a>
+        <a href="profil.html" class="block text-gray-700 hover:text-red-600 py-2">Profil</a>
+    </div>
+</header>
+
+
+
+  <!-- Titre de la page -->
+  <div class="container mx-auto px-4 py-8">
+    <h2 class="text-3xl font-bold text-gray-800 mb-4">Actualités</h2>
+  </div>
+    <!-- Article principal -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden mb-8">
+      
+    <!-- Tableau dynamique -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden p-6">
+      <h3 class="text-2xl font-bold text-gray-800 mb-4">Détails du programme</h3>
+      <table class="w-full text-left">
+        <thead>
+          <tr class="bg-gray-200">
+            <th class="px-4 py-2">UE (Unités d'Enseignement)</th>
+            <th class="px-4 py-2">Heure</th>
+            <th class="px-4 py-2">Lieu</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b">
+            <td class="px-4 py-2">Reseau</td>
+            <td class="px-4 py-2">09:00 - 11:00</td>
+            <td class="px-4 py-2">Salle A1</td>
+          </tr>
+          <tr class="border-b">
+            <td class="px-4 py-2">SE</td>
+            <td class="px-4 py-2">11:30 - 13:30</td>
+            <td class="px-4 py-2">Salle B2</td>
+          </tr>
+          <tr class="border-b">
+            <td class="px-4 py-2">Algèbre</td>
+            <td class="px-4 py-2">14:00 - 16:00</td>
+            <td class="px-4 py-2">Salle C3</td>
+          </tr>
+          <tr>
+            <td colspan="3" class="px-4 py-4"><b>Lieu: </b> Ange Raphaël Campus 1</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- Bouton de partage WhatsApp -->
+    <div class="mt-6">
+      <button onclick="shareOnWhatsApp()" class="bg-green-500 text-white px-4 py-2 mb-2 rounded hover:bg-green-600 flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 mr-2">
+          <path d="M19.05 4.91A9.816 9.816 0 0012 2C6.48 2 2 6.48 2 12c0 1.82.48 3.53 1.32 5L2 22l5-1.32A9.966 9.966 0 0012 22c5.52 0 10-4.48 10-10 0-2.65-1.03-5.14-2.95-7.09zM12 20c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+          <path d="M16.53 14.53l-3.48-1.56c-.29-.13-.64-.07-.87.16l-1.07 1.07c-.29.29-.77.29-1.06 0l-2.12-2.12a.75.75 0 010-1.06l1.07-1.07c.23-.23.29-.58.16-.87l-1.56-3.48a.75.75 0 011.34-.67l4.5 10.03c.18.4.02.88-.36 1.06z"/>
+        </svg>
+        Partager sur WhatsApp
+      </button>
+    </div>
+      <div class="p-6">
+        <h3 class="text-2xl font-bold text-gray-800 mb-2">Nouveau programme de remise à niveau</h3>
+        <p class="text-gray-600 mb-4">Découvrez notre nouveau programme conçu pour aider les étudiants à exceller dans leurs études.</p>
+        <p class="text-gray-500">Publié le : <span class="publication-date"></span></p>
+        <!-- <a href="#" class="text-blue-600 hover:text-blue-800">Lire la suite →</a> -->
+      </div>
+    </div>
+
+    <!-- Grille d'articles secondaires -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Article 1 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <img src="https://via.placeholder.com/400x200" alt="Image article" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h4 class="text-xl font-bold text-gray-800 mb-2">Ateliers de préparation aux concours</h4>
+          <p class="text-gray-600 mb-4">Inscrivez-vous à nos ateliers intensifs pour maximiser vos chances de réussite.</p>
+          <p class="text-gray-500">Publié le : <span class="publication-date"></span></p>
+          <a href="galerie.html" class="text-blue-600 hover:text-blue-800">Lire la suite →</a>
+        </div>
+      </div>
+
+      <!-- Article 2 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <img src="https://via.placeholder.com/400x200" alt="Image article" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h4 class="text-xl font-bold text-gray-800 mb-2">Nouveaux cours en ligne</h4>
+          <p class="text-gray-600 mb-4">Accédez à nos cours en ligne pour une flexibilité maximale.</p>
+          <p class="text-gray-500">Publié le : <span class="publication-date"></span></p>
+          <a href="formations.html" class="text-blue-600 hover:text-blue-800">Lire la suite →</a>
+        </div>
+      </div>
+
+      <!-- Article 3 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <img src="https://via.placeholder.com/400x200" alt="Image article" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h4 class="text-xl font-bold text-gray-800 mb-2">Témoignages d'étudiants</h4>
+          <p class="text-gray-600 mb-4">Découvrez les retours d'expérience de nos anciens étudiants.</p>
+          <p class="text-gray-500">Publié le : <span class="publication-date"></span></p>
+          <a href="#" class="text-blue-600 hover:text-blue-800">Lire la suite →</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Sidebar (optionnel) -->
+  <aside class="container mx-auto px-4 py-8">
+    <div class="bg-white rounded-lg shadow-md p-6">
+      <h3 class="text-xl font-bold text-gray-800 mb-4">À propos</h3>
+      <p class="text-gray-600 mb-4">Nous proposons des formations et des cours de remise à niveau pour les étudiants et les prépas concours.</p>
+      <a href="contact.html" class="text-blue-600 hover:text-blue-800">En savoir plus →</a>
+    </div>
+  </aside>
+
+  
+
+    <!-- Footer -->
+    <footer class="bg-red-600 text-white py-8">
+      <div class="container mx-auto px-4">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+              <!-- Informations de Contact -->
+              <div>
+                  <h5 class="text-xl font-bold mb-4">Contactez-Nous</h5>
+                  <p class="text-gray-200">Adresse : Ange Raphaël, Campus 1, Université de Douala</p>
+                  <p class="text-gray-200">Téléphone : <a href="tel:+237652923409" class="underline">+237 652 92 34 09</a></p>
+                  <p class="text-gray-200">Email : <a href="mailto:contact@leparrainacademique.com" class="underline">contact@leparrainacademique.com</a></p>
+              </div>
+              <!-- Liens Rapides -->
+              <div>
+                  <h5 class="text-xl font-bold mb-4">Liens Rapides</h5>
+                  <ul class="space-y-2">
+                      <li><a href="accueil.html" class="text-gray-200 hover:text-white">Accueil</a></li>
+                      <li><a href="formations.html" class="text-gray-200 hover:text-white">Formations</a></li>
+                      <li><a href="contact.html" class="text-gray-200 hover:text-white">À Propos</a></li>
+                      <li><a href="help.html" class="text-gray-200 hover:text-white">Aide</a></li>
+                      <li><a href="#" class="text-gray-200 hover:text-white">Mentions Légales</a></li>
+                  </ul>
+              </div>
+              <!-- Réseaux Sociaux -->
+              <div>
+                  <h5 class="text-xl font-bold mb-4">Suivez-Nous</h5>
+                  <div class="flex space-x-4">
+                      <a href="#" class="text-gray-200 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#" class="text-gray-200 hover:text-white"><i class="fab fa-twitter"></i></a>
+                      <a href="#" class="text-gray-200 hover:text-white"><i class="fab fa-instagram"></i></a>
+                      <a href="#" class="text-gray-200 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                  </div>
+              </div>
+              <!-- Newsletter -->
+              <div>
+                  <h5 class="text-xl font-bold mb-4">Newsletter</h5>
+                  <form class="flex">
+                      <input type="email" placeholder="Votre email" class="w-full p-2 rounded-l-lg focus:outline-none text-gray-700">
+                      <button type="submit" class="bg-white text-red-600 px-4 py-2 rounded-r-lg hover:bg-gray-100 transition duration-300">
+                          <i class="fas fa-paper-plane"></i>
+                      </button>
+                  </form>
+              </div>
+          </div>
+          <div class="text-center mt-8">
+              <p>&copy; 2023 Le Parrain Académique. Tous droits réservés.</p>
+              <p>Conçu par <strong><a href="https://wa.me/237690372862">Herman</a> </strong></p>
+          </div>
+      </div>
+  </footer>
+
+  <!-- Script JavaScript -->
+  <script>
+    // Fonction pour formater la date au format "jj/mm/aaaa"
+    function formatDate(date) {
+      const day = String(date.getDate()).padStart(2, '0');
+      const month = String(date.getMonth() + 1).padStart(2, '0'); // Les mois commencent à 0
+      const year = date.getFullYear();
+      return `${day}/${month}/${year}`;
+    }
+
+    // Ajouter la date de publication à chaque article
+    document.querySelectorAll('.publication-date').forEach((element) => {
+      const currentDate = new Date(); // Date actuelle
+      element.textContent = formatDate(currentDate); // Formater et afficher la date
+    });
+  </script>
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+  <script>
+  function shareOnWhatsApp() {
+    // Récupérer les données du tableau
+    const ues = Array.from(document.querySelectorAll('tbody tr')).map(row => {
+      const [ue, heure, lieu] = row.children;
+      return `${ue.textContent} - ${heure.textContent} - ${lieu.textContent}`;
+    }).join('%0A'); // %0A est un saut de ligne pour WhatsApp
+
+    // Créer le message à partager
+    const message = `Détails du programme :%0A${ues}`;
+
+    // Ouvrir le lien WhatsApp
+    window.open(`https://wa.me/?text=${message}`, '_blank');
+  }
+  </script>
+
+</body>
+</html>

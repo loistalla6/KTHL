@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="og:title" content="LE PARRAIN ACADEMIQUE">
+    <meta name="og:description"
+        content="Apprenez et progressez avec le Parrain Académique ! proposant des cours de remise a niveau et ressources pour étudiants et professionnels ">
+    <meta name="og:image" content="logo.jpg">
+    <meta name="og:url" content="https://le-parrain-academique.web.app">
+    <title>Bienvenue</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        /* Spécifique pour l'effet de texte */
+        .text-gradient {
+            background: linear-gradient(to right, #dc3545, #007bff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+
+<body class="bg-cover bg-center h-screen flex items-center justify-center fade-in">
+
+    <div id="loader" class="loader">
+        <div class="animate-spin rounded-full h-32 w-32 border-t-4 border-blue-500"></div>
+    </div>
+
+    <div id="content" class="container text-center hidden">
+        <img src="logo.jpg" alt="Logo du site" class="logo w-36 h-36 rounded-full mb-5 mx-auto">
+        <h1 class="text-4xl text-white font-bold mb-4 text-gradient">Bienvenue sur notre site !</h1>
+        <p class=" text-lg mb-8">Découvrez notre plateforme et rejoignez notre communauté.</p>
+        <a href="inscription.html"
+            class="transition duration-500 ease-in-out bg-gradient-to-r from-red-500 to-blue-500 hover:from-blue-500 hover:to-red-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
+            onclick="navigate(event)">Poursuivre Maintenant</a>
+        <br>
+        <a href="https://wa.me/237690372862?text=*message*%20*du*%20*site*%20*parrain*%20*académique:*%20Bonjour"
+            target="_blank" class="lien-createur  mt-5 block">Design by KTHL</a>
+        <a href="accueil.html" class=" absolute bottom-5 right-5">Visiter le site</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Loader
+            const loader = document.getElementById('loader');
+            const content = document.getElementById('content');
+
+            // Initial Hide loader and Show content 
+            content.style.display = 'none';
+            loader.style.display = 'flex';
+            loader.classList.add('items-center', 'justify-center');
+
+            setTimeout(function () {
+                loader.style.display = 'none';
+                content.style.display = 'block';
+                content.classList.add('animate__animated', 'animate__fadeIn');
+            }, 3000);
+        });
+
+        function navigate(event) {
+            event.preventDefault();
+            const content = document.getElementById('content');
+            content.classList.remove('animate__fadeIn');
+            content.classList.add('animate__fadeOut');
+
+            setTimeout(() => {
+                window.location.href = 'login.html';
+            }, 500);
+        }
+    </script>
+</body>
+
+</html>

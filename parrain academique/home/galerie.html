@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="og:title" content="LE PARRAIN ACADEMIQUE" />
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+  <meta name="og:description"
+      content="Apprenez et progressez avec le Parrain Académique ! proposant des cours de remisea niveau et ressources pour étudiants et professionnels " />
+  <meta name="og:image" content="logo.jpg" />
+  <meta name="og:url" content="https://le-parrain-academique.web.app" />
+  <title>Le Parrain Académique - Formations et Remise à Niveau</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <!-- Animation CSS (Animate.css) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <!-- Icônes (Font Awesome) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <!-- Bibliothèque pour les carrousels (Glide.js) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.4.1/dist/css/glide.core.min.css" />
+  <!-- CDN pour Slick Carousel -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+  <!-- CDN pour Swiper.js -->
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet" />
+  <!-- AOS CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Styles personnalisés pour les transitions */
+    .gallery-item {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .gallery-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Styles pour le menu fixe en mode mobile */
+    @media (max-width: 768px) {
+      .filter-menu {
+        position: fixed;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 8px;
+        border-radius: 8px 0 0 8px;
+        box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
+      }
+      .filter-btn {
+        display: block;
+        margin-bottom: 8px;
+        width: 100%;
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans">
+<!-- Header avec Navigation -->
+<header class="bg-white shadow-md fixed w-full z-50">
+  <div class="container mx-auto flex justify-between items-center px-4 py-4">
+      <!-- Logo -->
+      <a href="#" class="flex items-center">
+          <img src="logo.jpg" alt="Logo Le Parrain Académique" class="h-16 w-16 rounded-full" />
+      </a>
+      <!-- Navigation -->
+      <nav class="hidden md:flex space-x-6">
+          <a href="accueil.html" class="text-gray-700 hover:text-red-600 transition duration-300">Accueil</a>
+          <a href="Formations.html"
+              class="text-gray-700 hover:text-red-600 transition duration-300">Formations</a>
+          <a href="contact.html" class="text-gray-700 hover:text-red-600 transition duration-300">À Propos</a>
+          <a href="actualite.html" class="text-gray-700 hover:text-red-600 transition duration-300">Actualités</a>
+          <a href="aide.html" class="text-gray-700 hover:text-red-600 transition duration-300">Aide</a>
+          <a href="profil.html" class="text-gray-700 hover:text-red-600 transition duration-300">Profil</a>
+      </nav>
+      <!-- Bouton Se Connecter -->
+      <a href="login.html"
+          class="bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition duration-300">
+          Se Connecter
+      </a>
+      <!-- Menu Mobile -->
+      <button id="menuBtn" class="md:hidden text-gray-700 focus:outline-none">
+          <i class="fas fa-bars text-2xl"></i>
+      </button>
+  </div>
+  <!-- Menu Mobile Dropdown -->
+  <div id="mobileMenu" class="hidden md:hidden bg-white shadow-lg px-4 py-2">
+      <a href="accueil.html" class="block text-gray-700 hover:text-red-600 py-2">Accueil</a>
+      <a href="formations.html" class="block text-gray-700 hover:text-red-600 py-2">Formations</a>
+      <a href="contact.html" class="block text-gray-700 hover:text-red-600 py-2">À Propos</a>
+      <a href="actualite.html" class="text-gray-700 hover:text-red-600 transition duration-300">Actualités</a>
+      <a href="help.html" class="block text-gray-700 hover:text-red-600 py-2">Aide</a>
+      <a href="profil.html" class="block text-gray-700 hover:text-red-600 py-2">Profil</a>
+  </div>
+</header>
+
+<br><br><br><br><br>
+  <!-- Titre de la page -->
+  <div class="container mx-auto px-4 py-8 mb-6">
+    <h2 class="text-3xl font-bold text-gray-800 mb-4">Galerie</h2>
+    <p class="text-gray-600">Découvrez nos formations, Prépas Concours et supports pédagogiques en images.</p>
+  </div> 
+  <!-- Icône pour ouvrir le popup -->
+<div class="flex justify-center">
+  <button onclick="openPopup()" class="p-4 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition duration-300">
+    <i class="fas fa-calendar-alt text-2xl"></i>
+  </button>
+</div>
+
+  <!-- Galerie principale -->
+  <main class="container mx-auto px-4">
+    <!-- Filtres de catégories (fixe en mode mobile) -->
+    <div class="filter-menu">
+      <button class="filter-btn bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" data-filter="all">Tout</button>
+      <button class="filter-btn bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400" data-filter="flyers">Flyers</button>
+      <button class="filter-btn bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400" data-filter="cours">Prépas</button>
+      <button class="filter-btn bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400" data-filter="evenements">Événements</button>
+      <button class="filter-btn bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400" data-filter="pedagogie">Pédagogie</button>
+    </div><br>
+
+    <!-- Grille de la galerie -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <!-- Flyer 1 -->
+      <div class="gallery-item flyers bg-white rounded-lg shadow-md overflow-hidden">
+        <a href="images/IMG-20250212-WA0027.jpg"><img src="images/IMG-20250212-WA0027.jpg" alt="Flyer 1" class="w-full h-64 object-cover"></a>
+        <div class="p-4">
+          <h3 class="text-lg font-bold text-gray-800">Flyer formation React JS</h3>
+          <p class="text-gray-600">Découvrez nos formations pour la rentrée 2025.</p>
+        </div>
+        <div class="flex space-x-4 px-8">
+          <a href="https://wa.me/237652923409" class="text-green-500 hover:text-green-600"><i
+                  class="fab fa-whatsapp"></i></a>
+          <a href="tel:+237652923409" class="text-blue-500 hover:text-blue-600"><i
+                  class="fas fa-phone"></i></a>
+          <a href="mailto:contact@leparrainacademique.com" class="text-red-500 hover:text-red-600"><i
+                  class="fas fa-envelope"></i></a>
+      </div>
+      </div>
+
+      <!-- Cours 1 -->
+      <div class="gallery-item cours bg-white rounded-lg shadow-md overflow-hidden">
+        <a href="images/IMG-20240918-WA0065.jpg"><img src="images/IMG-20240918-WA0065.jpg" alt="Cours en ligne" class="w-full h-64 object-cover"></a>
+        <div class="p-4">
+          <h3 class="text-lg font-bold text-gray-800">Prepas Concours</h3>
+          <p class="text-gray-600">Medecine</p>
+          <p class="text-gray-600">Date prévu: </p>
+        </div>
+      </div>
+
+      <div class="gallery-item cours bg-white rounded-lg shadow-md overflow-hidden">
+        <a href="images/IMG-20240918-WA0067.jpg"><img src="images/IMG-20240918-WA0067.jpg" alt="Cours en ligne" class="w-full h-64 object-cover"></a>
+        <div class="p-4">
+          <h3 class="text-lg font-bold text-gray-800">Prepas Concours</h3>
+          <p class="text-gray-600">ESSEC</p>
+          <p class="text-gray-600">Date prévu: <b>Août</b></p>
+        </div>
+      </div>
+
+      <div class="gallery-item cours bg-white rounded-lg shadow-md overflow-hidden">
+        <a href="images/IMG-20240918-WA0066.jpg"><img src="images/IMG-20240918-WA0066.jpg" alt="Cours en ligne" class="w-full h-64 object-cover"></a>
+        <div class="p-4">
+          <h3 class="text-lg font-bold text-gray-800">Prepas Concours</h3>
+          <p class="text-gray-600">IDE</p>
+          <p class="text-gray-600">Date prévu: <b>Août</b></p>
+        </div>
+      </div>
+
+      <div class="gallery-item cours bg-white rounded-lg shadow-md overflow-hidden">
+        <a href="images/IMG-20240918-WA0070.jpg"><img src="images/IMG-20240918-WA0070.jpg" alt="Cours en ligne" class="w-full h-64 object-cover"></a>
+        <div class="p-4">
+          <h3 class="text-lg font-bold text-gray-800">Prepas Concours</h3>
+          <p class="text-gray-600">POLYTECHNIQUE</p>
+          <p class="text-gray-600">Date prévu: <b>Juillet</b> </p>
+          
+        </div>
+      </div>
+
+      <!-- Événement 1 -->
+      <div class="gallery-item evenements bg-white rounded-lg shadow-md overflow-hidden">
+        <img src="https://via.placeholder.com/400x500" alt="Événement 2025" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-bold text-gray-800">Événement 2025</h3>
+          <p class="text-gray-600">Retour en images sur notre dernier événement.</p>
+        </div>
+      </div>
+
+      <!-- Pédagogie 1 -->
+      <div class="gallery-item pedagogie bg-white rounded-lg shadow-md overflow-hidden">
+        <img src="https://via.placeholder.com/400x450" alt="Méthodes pédagogiques" class="w-full h-64 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-bold text-gray-800">Méthodes pédagogiques</h3>
+          <p class="text-gray-600">Découvrez nos approches innovantes.</p>
+        </div>
+      </div>
+
+      <!-- Ajoutez plus d'éléments ici -->
+    </div>
+  </main>
+<br><br>
+
+<!-- Icône pour ouvrir le popup -->
+<div class="flex justify-center">
+  <button onclick="openPopup()" class="p-4 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition duration-300">
+    <i class="fas fa-calendar-alt text-2xl"></i>
+  </button>
+</div>
+<!-- Popup -->
+<div id="popup" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+  <div class="absolute bottom-0 w-full transform translate-y-full transition-transform duration-300 ease-in-out">
+    <div class="bg-white rounded-t-lg shadow-lg p-6 mx-auto w-11/12 max-w-md">
+      <h2 class="text-2xl font-bold mb-4">Dates de Début des Concours</h2>
+      <p class="text-gray-700">La date de début de <strong>tous les concours</strong> est prévue pour <strong>mars 2025</strong>.</p>
+      <button onclick="closePopup()" class="mt-4 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+        Fermer
+      </button>
+    </div>
+  </div>
+</div>
+
+<br>
+    <!-- Section d'Appel à l'Action -->
+    <section class="py-16 bg-blue-500 text-white">
+      <div class="container mx-auto text-center px-4">
+          <h2 class="text-3xl font-bold mb-4 animate__animated animate__fadeIn">
+              Prêt à Commencer ?
+          </h2>
+          <p class="text-lg mb-8 animate__animated animate__fadeIn animate__delay-1s">
+              Inscrivez-vous dès aujourd'hui et boostez votre carrière avec nos
+              formations professionnelles.
+          </p>
+          <a href="login.html"
+              class="bg-red-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-red-700 transition duration-300 animate__animated animate__fadeIn animate__delay-2s">
+              S'inscrire Maintenant
+          </a>
+      </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-red-600 text-white py-8">
+      <div class="container mx-auto px-4">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+              <!-- Informations de Contact -->
+              <div>
+                  <h5 class="text-xl font-bold mb-4">Contactez-Nous</h5>
+                  <p class="text-gray-200">
+                      Adresse : Ange Raphaël, Campus 1, Université de Douala
+                  </p>
+                  <p class="text-gray-200">
+                      Téléphone :
+                      <a href="tel:+237652923409" class="underline">+237 652 92 34 09</a>
+                  </p>
+                  <p class="text-gray-200">
+                      Email :
+                      <a href="mailto:contact@leparrainacademique.com"
+                          class="underline">contact@leparrainacademique.com</a>
+                  </p>
+              </div>
+              <!-- Liens Rapides -->
+              <div>
+                  <h5 class="text-xl font-bold mb-4">Liens Rapides</h5>
+                  <ul class="space-y-2">
+                      <li>
+                          <a href="accueil.html" class="text-gray-200 hover:text-white">Accueil</a>
+                      </li>
+                      <li>
+                          <a href="formations.html" class="text-gray-200 hover:text-white">Formations</a>
+                      </li>
+                      <li>
+                          <a href="contact.html" class="text-gray-200 hover:text-white">À Propos</a>
+                      </li>
+                      <li>
+                          <a href="help.html" class="text-gray-200 hover:text-white">Aide</a>
+                      </li>
+                      <li>
+                          <a href="#" class="text-gray-200 hover:text-white">Mentions Légales</a>
+                      </li>
+                  </ul>
+              </div>
+              <!-- Réseaux Sociaux -->
+              <div>
+                  <h5 class="text-xl font-bold mb-4">Suivez-Nous</h5>
+                  <div class="flex space-x-4">
+                      <a href="#" class="text-gray-200 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#" class="text-gray-200 hover:text-white"><i class="fab fa-twitter"></i></a>
+                      <a href="#" class="text-gray-200 hover:text-white"><i class="fab fa-instagram"></i></a>
+                      <a href="#" class="text-gray-200 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                  </div>
+              </div>
+              <!-- Newsletter -->
+              <div>
+                  <h5 class="text-xl font-bold mb-4">Newsletter</h5>
+                  <form class="flex">
+                      <input type="email" placeholder="Votre email"
+                          class="w-full p-2 rounded-l-lg focus:outline-none text-gray-700" />
+                      <button type="submit"
+                          class="bg-white text-red-600 px-4 py-2 rounded-r-lg hover:bg-gray-100 transition duration-300">
+                          <i class="fas fa-paper-plane"></i>
+                      </button>
+                  </form>
+              </div>
+          </div>
+          <div class="text-center mt-8">
+              <p>&copy; 2023 Le Parrain Académique. Tous droits réservés.</p>
+              <p>
+                  Conçu par
+                  <strong><a href="https://wa.me/237690372862">Herman</a> </strong>
+              </p>
+          </div>
+      </div>
+  </footer>
+  <!-- Script JavaScript -->
+  <script>
+    // Menu mobile
+    const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+    // Filtrage des éléments de la galerie
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    filterButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const filter = button.getAttribute('data-filter');
+
+        // Retirer la classe active de tous les boutons
+        filterButtons.forEach((btn) => btn.classList.remove('bg-blue-600', 'text-white'));
+        filterButtons.forEach((btn) => btn.classList.add('bg-gray-300', 'text-gray-800'));
+
+        // Ajouter la classe active au bouton cliqué
+        button.classList.remove('bg-gray-300', 'text-gray-800');
+        button.classList.add('bg-blue-600', 'text-white');
+
+        // Filtrer les éléments de la galerie
+        galleryItems.forEach((item) => {
+          if (filter === 'all' || item.classList.contains(filter)) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+
+<script>
+  function openPopup() {
+    const popup = document.getElementById('popup');
+    const popupContent = popup.querySelector('div');
+
+    // Afficher le popup
+    popup.classList.remove('hidden');
+
+    // Démarrer l'animation (faire glisser le popup vers le haut)
+    setTimeout(() => {
+      popupContent.classList.remove('translate-y-full');
+    }, 10); // Petit délai pour permettre le rendu initial
+  }
+
+  function closePopup() {
+    const popup = document.getElementById('popup');
+    const popupContent = popup.querySelector('div');
+
+    // Cacher le popup après l'animation
+    popupContent.classList.add('translate-y-full');
+    setTimeout(() => {
+      popup.classList.add('hidden');
+    }, 300); // Correspond à la durée de l'animation (300ms)
+  }
+</script>
+
+</body>
+</html>

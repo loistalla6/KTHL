@@ -1,0 +1,468 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color:#f7f7f7;
+}
+a{
+    text-decoration: none;
+}
+.zoom{
+    zoom: 0.5;
+}
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    color: white; /* Couleur du texte */
+}
+
+.card:hover {
+    background-color:linear-gradient(to right,#dc3545, #007bff ) ;
+    transition: border 2s;
+}
+
+.card-img-top {
+    height: 200px; /* Ajustez la hauteur selon vos besoins */
+    object-fit: cover; /* Cela permet de garder le ratio de l'image */
+}
+.card{
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+    border-radius: 10px; /* Coins arrondis */
+    border: none;
+}
+
+.card-title {
+    font-weight: bold; /* Titre en gras */
+}
+
+#cta {
+    background: linear-gradient(to right,#dc3545, #007bff ); /* Couleur de fond légère */
+    padding: 40px 20px; /* Espacement */
+    border-radius: 5px; /* Arrondir les bords */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+.li-none{
+    list-style: none;
+}
+.a-none{
+    text-decoration: none;
+    color: #dc3545;
+}
+.fg{
+    font-size: 1rem;
+    margin: 10px;
+    padding: 10px;
+}
+
+.contain-video video{
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to right,#dc3545, #007bff );
+    padding: 10px;
+}
+.contain-video .row{
+    padding: 5px;
+    width: auto;
+    height: 20vh;
+    margin-bottom: 9px;
+}
+
+.red{
+    color: #dc3545;
+}
+
+
+/* CSS pour styliser l'image et le texte */
+.text-center {
+    position: relative; /* Pour positionner le texte par rapport à l'image */
+}
+
+.overlay {
+    position: absolute;
+    top: 50%; /* Centre verticalement */
+    left: 50%; /* Centre horizontalement */
+    transform: translate(-50%, -50%); /* Ajuste le centre */
+    text-align: center; /* Centre le texte */
+    background: rgba(0, 0, 0, 0.5); /* Fond semi-transparent pour améliorer la lisibilité */
+    padding: 20px; /* Espacement autour du texte */
+    border-radius: 5px; /* Coins arrondis */
+}
+
+@media (max-width: 576px) {
+    .overlay h1 {
+        font-size: 2rem; /* Ajustez la taille du titre pour mobile */
+    }
+}
+/* Media Queries pour les écrans de bureau */
+@media (min-width: 1025px) {
+    .img-acc img {
+        height: 500px; /* Hauteur pour les machines de bureau */
+        width: 100%;
+    }
+}
+
+
+
+#navbar {
+            transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transition pour l'animation */
+        }
+
+        .scrolled {
+            background-color: #f8f9fa; /* Couleur de fond après le défilement */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre portée */
+        }
+
+        /* Pour le contenu de la page, afin de pouvoir faire défiler */
+        .content {
+            height: 2000px; /* Pour avoir suffisamment de contenu à faire défiler */
+            background: linear-gradient(to bottom, #e9ecef, #fff); /* Dégradé pour le fond */
+        }
+
+
+/* Dégradé linéaire pour la navbar */
+#navbar {
+    background: linear-gradient(50deg, #ef5858, #5d92ed); /* Dégradé violet à bleu */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transition pour l'animation */
+    z-index: 1000; /* Assurez-vous que la navbar est au-dessus des autres éléments */
+}
+
+.navbar-nav .nav-link {
+    color: white; /* Couleur des liens pour le contraste */
+    transition: color 0.3s ease, transform 0.3s ease; /* Transition pour la couleur et l'animation */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffeb3b; /* Couleur des liens au survol */
+    transform: scale(1); /* Agrandit le lien au survol */
+}
+
+/* Assurez-vous que le contenu en dessous de la navbar est visible */
+.content {
+    padding-top: 100px; /* Marge pour éviter que le contenu soit caché par la navbar */
+    height: 2000px; /* Juste pour permettre le défilement */
+    background: linear-gradient(to bottom, #e9ecef, #fff); /* Dégradé pour le fond */
+}
+
+
+
+@media (max-width: 768px) {
+    .vente-produit .overlay h2 {
+        font-size: 2rem; /* Ajuster la taille de texte pour les petits écrans */
+    }
+    .vente-produit .overlay p {
+        font-size: 1rem; /* Ajuster la taille de texte pour les petits écrans */
+    }
+}
+
+footer {
+    background: linear-gradient(to bottom, #dc3545, #007bff ); /* Dégradé du sombre au clair */
+    color: white; /* Textes en blanc pour une meilleure lisibilité */
+}
+
+#atout{
+    background-image: url("images/IMG-20240907-WA0056.jpg");
+    background-size: cover;
+    object-fit:cover;
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    
+}
+.contact{
+    position: fixed;
+    right: 15px;
+    bottom: 10px;
+    z-index: 100;
+
+}
+
+/* Améliorations visuelles */
+.container-lien {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#h2{
+    font-weight: bold;
+    color: #333;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 10px;
+}
+
+th {
+    font-weight: bold;
+}
+
+td a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+td a:hover {
+    text-decoration: underline;
+}
+/*animation des card*/
+/* #carde1{
+    position: relative;
+    left: -400px;
+}
+#card2{
+    position: relative;
+    right: -400px;
+}
+.move1{
+    margin-left: 250px;
+    transition:all 2s ease-in-out ;
+    transform: translateX(0);
+}
+.move2{
+    margin-right: 500px;
+    transition:all 2s ease-in-out ;
+    transform: translateX(0);
+} */
+.focus-button{
+    background: linear-gradient(to right,#dc3545, #007bff );
+}
+.focus-button:focus{
+    opacity: 0.5;
+}
+@media (max-width: 768px) {
+    .vcard1{
+        position: relative;
+        opacity: 0;
+    }
+    .vcard2{
+        position: relative;
+        opacity: 0;
+    }
+    .vcard3{
+        position: relative;
+        opacity: 0;
+    }
+    .change1{
+        opacity: 1;
+        transition:opacity 2s ease-in-out ;
+    }
+}
+
+.btn-danger {
+    background: linear-gradient(to right,#dc3545, #007bff ); /* Rouge */
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 25px;
+    width: 220px;
+    font-size: 15px;
+    text-overflow: clip;
+    text-shadow: 1px 2px 2px black;
+    transition: 0.5s opacity 0.2s background-color 0.6s;
+}
+
+.btn-danger:hover {
+    opacity: 0.6;
+    background-color: #0056b3;
+    
+}
+
+.icon{
+    margin-left: 10px;
+    background-color:#007bff; 
+     color: #333;
+     border-radius: 50%;
+      padding: 5px;
+    font-size: 22px;
+}
+
+@keyframes backgroundCycle {
+    0%, 100% { background-color: #f8f9fa; }
+    50% { background-color: #e3f2fd; }
+}
+
+
+@keyframes headerCycle {
+    0%, 100% { background-color: #007bff; }
+    50% { background-color: #0056b3; }
+}
+
+.stats, .newsletter {
+    margin: 20px;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    transition: color 1s;
+    animation: textColorChange 5s infinite;
+}
+
+@keyframes textColorChange {
+    0%, 100% { color: #333; }
+    50% { color: rgb(255, 255, 255); }
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 10px;
+    transition: background-color 0.5s, transform 0.3s;
+    animation: buttonPulse 2s infinite;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+@keyframes buttonPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+input[type="email"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 80%;
+    margin-bottom: 10px;
+    transition: border-color 0.3s;
+}
+
+input[type="email"]:focus {
+    border-color: #007bff;
+}
+
+
+.stats, .newsletter {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(to right,#dc3545, #007bff ); 
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    font-family:Arial, Helvetica, sans-serif ;
+}
+
+.stat-item, .newsletter-item {
+    text-align: center;
+}
+
+.stat-item i, .newsletter-item i {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.newsletter-item input[type="email"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.newsletter-item button {
+    background: linear-gradient(to right,#dc3545, #007bff ); 
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.newsletter-item button:hover {
+    background-color: #004080;
+}
+
+@media (max-width: 768px) {
+    input[type="email"] {
+        width: 100%;
+    }
+    .stats, .newsletter{
+        flex-direction: column;
+    }
+
+}
+
+.statistiques {
+    background-color: #f7f7f7;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .carrousele {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  .statistique {
+    flex: 0 0 auto;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    transition: all 0.3s ease-in-out;
+    display: none; /* Hidden by default */
+  }
+
+  .statistique.active {
+    display: block; /* Show only the active item */
+  }
+
+  .statistique:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .statistique h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #337ab7;
+  }
+
+  .statistique p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #666;
+  }
+
+  .statistique .icone {
+    font-size: 24px;
+    margin-right: 10px;
+    color: #337ab7;
+  }
+
+  .previouse, .nexte {
+    background-color: #337ab7;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+  }
+  .previouse:hover, .nexte:hover {
+    background-color: #23527c;
+  }

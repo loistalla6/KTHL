@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="og:title" content="LE PARRAIN ACADEMIQUE">
+    <meta name="og:description"
+        content="Apprenez et progressez avec le Parrain Académique ! Proposant des cours de remise à niveau et ressources pour étudiants et professionnels.">
+    <meta name="og:image" content="logo.jpg">
+    <meta name="og:url" content="https://le-parrain-academique.web.app">
+    <title>Aide</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js"></script>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Header avec Navigation -->
+    <header class="bg-white shadow-md fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center px-4 py-4">
+            <!-- Logo -->
+            <a href="#" class="flex items-center">
+                <img src="logo.jpg" alt="Logo Le Parrain Académique" class="h-16 w-16 rounded-full">
+            </a>
+            <!-- Navigation -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="accueil.html" class="text-gray-700 hover:text-red-600 transition duration-300">Accueil</a>
+                <a href="Formations.html" class="text-gray-700 hover:text-red-600 transition duration-300">Formations</a>
+                <a href="contact.html" class="text-gray-700 hover:text-red-600 transition duration-300">À Propos</a>
+                <a href="actualite.html" class="text-gray-700 hover:text-red-600 transition duration-300">Actualités</a>
+                <a href="aide.html" class="text-gray-700 hover:text-red-600 transition duration-300">Aide</a>
+                <a href="profil.html" class="text-gray-700 hover:text-red-600 transition duration-300">Profil</a>
+            </nav>
+            <!-- Bouton Se Connecter -->
+            <a href="login.html" class="bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition duration-300">
+                Se Connecter
+            </a>
+            <!-- Menu Mobile -->
+            <button id="menuBtn" class="md:hidden text-gray-700 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Menu Mobile Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white shadow-lg px-4 py-2">
+            <a href="accueil.html" class="block text-gray-700 hover:text-red-600 py-2">Accueil</a>
+            <a href="formations.html" class="block text-gray-700 hover:text-red-600 py-2">Formations</a>
+            <a href="contact.html" class="block text-gray-700 hover:text-red-600 py-2">À Propos</a>
+            <a href="actualite.html" class="text-gray-700 hover:text-red-600 transition duration-300">Actualités</a>
+            <a href="help.html" class="block text-gray-700 hover:text-red-600 py-2">Aide</a>
+            <a href="profil.html" class="block text-gray-700 hover:text-red-600 py-2">Profil</a>
+        </div>
+    </header><br><br><br><br>
+
+    <!-- Section Informations Utiles -->
+    <section class="container mx-auto px-4 py-12">
+        <h2 class="text-3xl font-bold text-center mb-8 text-blue-600">Informations Utiles</h2>
+
+        <!-- Accordion -->
+        <div class="space-y-4">
+            <!-- Accordion Item 1 -->
+            <div class="bg-white rounded-lg shadow border border-blue-200">
+                <button class="w-full p-4 text-left font-semibold text-blue-600 hover:bg-blue-50" onclick="toggleAccordion('accordion1')">
+                    Qu'est-ce que le Parrain Académique ?
+                </button>
+                <div id="accordion1" class="p-4 hidden text-gray-700">
+                    Le Parrain Académique est un site d'éducation qui propose des formations et des cours de remise à niveau.
+                </div>
+            </div>
+
+            <!-- Accordion Item 2 -->
+            <div class="bg-white rounded-lg shadow border border-blue-200">
+                <button class="w-full p-4 text-left font-semibold text-blue-600 hover:bg-blue-50" onclick="toggleAccordion('accordion2')">
+                    Quels sont les objectifs du Parrain Académique ?
+                </button>
+                <div id="accordion2" class="p-4 hidden text-gray-700">
+                    Notre objectif est de fournir une éducation de qualité pour aider les étudiants à réussir leurs études et leur carrière.
+                </div>
+            </div>
+            
+            <!-- Accordion Item 3 -->
+            <div class="bg-white rounded-lg shadow border border-blue-200">
+                <button class="w-full p-4 text-left font-semibold text-blue-600 hover:bg-blue-50" onclick="toggleAccordion('accordion3')">
+                    Quels sont les objectifs du Parrain Académique ?
+                </button>
+                <div id="accordion3" class="p-4 hidden text-gray-700">
+                    Notre objectif est de fournir une éducation de qualité pour aider les étudiants à réussir leurs études et leur carrière.
+                </div>
+            </div>
+
+            <!-- Accordion Item 4 -->
+            <div class="bg-white rounded-lg shadow border border-blue-200">
+                <button class="w-full p-4 text-left font-semibold text-blue-600 hover:bg-blue-50" onclick="toggleAccordion('accordion4')">
+                    Quels sont les objectifs du Parrain Académique ?
+                </button>
+                <div id="accordion4" class="p-4 hidden text-gray-700">
+                    Notre objectif est de fournir une éducation de qualité pour aider les étudiants à réussir leurs études et leur carrière.
+                </div>
+            </div>
+
+            <!-- Accordion Item 5 -->
+            <div class="bg-white rounded-lg shadow border border-blue-200">
+                <button class="w-full p-4 text-left font-semibold text-blue-600 hover:bg-blue-50" onclick="toggleAccordion('accordion5')">
+                    Quels sont les objectifs du Parrain Académique ?
+                </button>
+                <div id="accordion5" class="p-4 hidden text-gray-700">
+                    Notre objectif est de fournir une éducation de qualité pour aider les étudiants à réussir leurs études et leur carrière.
+                </div>
+            </div>
+
+            <!-- Accordion Item 2 -->
+            <div class="bg-white rounded-lg shadow border border-blue-200">
+                <button class="w-full p-4 text-left font-semibold text-blue-600 hover:bg-blue-50" onclick="toggleAccordion('accordion6')">
+                    Quels sont les objectifs du Parrain Académique ?
+                </button>
+                <div id="accordion6" class="p-4 hidden text-gray-700">
+                    Notre objectif est de fournir une éducation de qualité pour aider les étudiants à réussir leurs études et leur carrière.
+                </div>
+            </div>
+
+            <!-- Accordion Item 2 -->
+            <div class="bg-white rounded-lg shadow border border-blue-200">
+                <button class="w-full p-4 text-left font-semibold text-blue-600 hover:bg-blue-50" onclick="toggleAccordion('accordion7')">
+                    Quels sont les objectifs du Parrain Académique ?
+                </button>
+                <div id="accordion7" class="p-4 hidden text-gray-700">
+                    Notre objectif est de fournir une éducation de qualité pour aider les étudiants à réussir leurs études et leur carrière.
+                </div>
+            </div>
+
+            <!-- Accordion Item 2 -->
+            <div class="bg-white rounded-lg shadow border border-blue-200">
+                <button class="w-full p-4 text-left font-semibold text-blue-600 hover:bg-blue-50" onclick="toggleAccordion('accordion8')">
+                    Quels sont les objectifs du Parrain Académique ?
+                </button>
+                <div id="accordion8" class="p-4 hidden text-gray-700">
+                    Notre objectif est de fournir une éducation de qualité pour aider les étudiants à réussir leurs études et leur carrière.
+                </div>
+            </div>
+
+            <!-- Accordion Item 2 -->
+            <div class="bg-white rounded-lg shadow border border-blue-200">
+                <button class="w-full p-4 text-left font-semibold text-blue-600 hover:bg-blue-50" onclick="toggleAccordion('accordion9')">
+                    Quels sont les objectifs du Parrain Académique ?
+                </button>
+                <div id="accordion9" class="p-4 hidden text-gray-700">
+                    Notre objectif est de fournir une éducation de qualité pour aider les étudiants à réussir leurs études et leur carrière.
+                </div>
+            </div>
+
+            <!-- Accordion Item 2 -->
+            <div class="bg-white rounded-lg shadow border border-blue-200">
+                <button class="w-full p-4 text-left font-semibold text-blue-600 hover:bg-blue-50" onclick="toggleAccordion('accordion10')">
+                    Quels sont les objectifs du Parrain Académique ?
+                </button>
+                <div id="accordion10" class="p-4 hidden text-gray-700">
+                    Notre objectif est de fournir une éducation de qualité pour aider les étudiants à réussir leurs études et leur carrière.
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Section Commentaires -->
+    <section class="container mx-auto px-4 py-12">
+        <h2 class="text-3xl font-bold text-center mb-8">Commentaires</h2>
+        <div class="text-center">
+            <h5 class="text-xl mb-4">Avez-vous trouvé ces informations utiles ?</h5>
+            <button class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300" onclick="openModal()">
+                Donner un avis
+            </button>
+        </div>
+
+        <!-- Modal pour les commentaires -->
+        <div class="fixed inset-0 bg-black bg-opacity-50 hidden" id="commentModal">
+            <div class="flex items-center justify-center min-h-screen">
+                <div class="bg-white rounded-lg p-6 w-11/12 md:w-1/2">
+                    <h5 class="text-xl font-bold mb-4">Vos Commentaires</h5>
+                    <form id="commentForm">
+                        <div class="mb-4">
+                            <label for="name" class="block text-sm font-medium text-gray-700">Votre nom</label>
+                            <input type="text" id="name" class="w-full p-2 border rounded-lg" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="comment" class="block text-sm font-medium text-gray-700">Votre commentaire</label>
+                            <textarea id="comment" rows="3" class="w-full p-2 border rounded-lg" required></textarea>
+                        </div>
+                    </form>
+                    <div class="flex justify-end space-x-4">
+                        <button class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600" onclick="closeModal()">Fermer</button>
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700" onclick="submitComment()">Envoyer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Affichage des commentaires -->
+        <div id="recentMessages" class="mt-8">
+            <h5 class="text-xl font-bold mb-4">Messages Récents</h5>
+            <div id="commentModal" class="fixed inset-0 bg-black bg-opacity-50 hidden">
+                <!-- Contenu du modal -->
+            </div>
+            
+            <div id="messagesContainer" class="space-y-4">
+                <!-- Les commentaires seront affichés ici -->
+            </div>
+        </div>
+    </section>
+<!-- Footer -->
+<footer class="bg-red-600 text-white py-8">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Informations de Contact -->
+            <div>
+                <h5 class="text-xl font-bold mb-4">Contactez-Nous</h5>
+                <p class="text-gray-200">Adresse : Ange Raphaël, Campus 1, Université de Douala</p>
+                <p class="text-gray-200">Téléphone : <a href="tel:+237652923409" class="underline">+237 652 92 34 09</a></p>
+                <p class="text-gray-200">Email : <a href="mailto:contact@leparrainacademique.com" class="underline">contact@leparrainacademique.com</a></p>
+            </div>
+            <!-- Liens Rapides -->
+            <div>
+                <h5 class="text-xl font-bold mb-4">Liens Rapides</h5>
+                <ul class="space-y-2">
+                    <li><a href="accueil.html" class="text-gray-200 hover:text-white">Accueil</a></li>
+                    <li><a href="formations.html" class="text-gray-200 hover:text-white">Formations</a></li>
+                    <li><a href="contact.html" class="text-gray-200 hover:text-white">À Propos</a></li>
+                    <li><a href="help.html" class="text-gray-200 hover:text-white">Aide</a></li>
+                    <li><a href="#" class="text-gray-200 hover:text-white">Mentions Légales</a></li>
+                </ul>
+            </div>
+            <!-- Réseaux Sociaux -->
+            <div>
+                <h5 class="text-xl font-bold mb-4">Suivez-Nous</h5>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-200 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-200 hover:text-white"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-200 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-200 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <!-- Newsletter -->
+            <div>
+                <h5 class="text-xl font-bold mb-4">Newsletter</h5>
+                <form class="flex">
+                    <input type="email" placeholder="Votre email" class="w-full p-2 rounded-l-lg focus:outline-none text-gray-700">
+                    <button type="submit" class="bg-white text-red-600 px-4 py-2 rounded-r-lg hover:bg-gray-100 transition duration-300">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="text-center mt-8">
+            <p>&copy; 2023 Le Parrain Académique. Tous droits réservés.</p>
+            <p>Conçu par <strong><a href="https://wa.me/237690372862">Herman</a> </strong></p>
+        </div>
+    </div>
+</footer>
+
+    <!-- Scripts -->
+    <script>
+         // Menu mobile
+         const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Toggle Accordion
+        function toggleAccordion(id) {
+            const content = document.getElementById(id);
+            content.classList.toggle('hidden');
+        }
+
+        // Comment Modal
+        function openCommentModal() {
+            document.getElementById('commentModal').classList.remove('hidden');
+        }
+
+        function closeCommentModal() {
+            document.getElementById('commentModal').classList.add('hidden');
+        }
+    </script>
+    <script>
+        // Initialisation des animations AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+    
+        // Gestion du modal
+        function openModal() {
+            document.getElementById('commentModal').classList.remove('hidden');
+        }
+    
+        function closeModal() {
+            document.getElementById('commentModal').classList.add('hidden');
+        }
+    
+        // Configuration Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyA1_I2WrJjnDSGr7NcNtuwFd4wnVc20V8k",
+            authDomain: "le-parrain-academique.firebaseapp.com",
+            projectId: "le-parrain-academique",
+            storageBucket: "le-parrain-academique.appspot.com",
+            messagingSenderId: "835818417413",
+            appId: "1:835818417413:web:083056b7a007db925e9b6c"
+        };
+    
+        // Initialisation de Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+    
+        // Fonction pour échapper les caractères spéciaux (optionnel si DOMPurify est utilisé)
+        function escapeHtml(unsafe) {
+            return unsafe
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+    
+        // Charger les commentaires depuis Firestore
+        async function loadComments() {
+            const messagesContainer = document.getElementById('messagesContainer');
+            messagesContainer.innerHTML = ''; // Vider le conteneur avant de charger les nouveaux commentaires
+    
+            try {
+                const querySnapshot = await getDocs(collection(db, "comments"));
+                querySnapshot.forEach((doc) => {
+                    const commentData = doc.data();
+                    const messageDiv = document.createElement('div');
+                    messageDiv.className = 'bg-white p-4 rounded-lg shadow-md mb-4';
+    
+                    // Nettoyer les données avec DOMPurify pour empêcher XSS
+                    const cleanName = DOMPurify.sanitize(commentData.name);
+                    const cleanComment = DOMPurify.sanitize(commentData.comment);
+    
+                    // Afficher le commentaire
+                    messageDiv.innerHTML = `
+                        <strong>${escapeHtml(cleanName)}</strong> 
+                        (${new Date(commentData.date).toLocaleDateString('fr-FR')}): 
+                        ${escapeHtml(cleanComment)}
+                    `;
+                    messagesContainer.appendChild(messageDiv);
+                });
+            } catch (error) {
+                console.error("Erreur lors du chargement des commentaires : ", error);
+                messagesContainer.innerHTML = `<p class="text-red-500">Erreur lors du chargement des commentaires. Veuillez réessayer plus tard.</p>`;
+            }
+        }
+    
+        // Soumettre un commentaire
+        async function submitComment() {
+            const name = document.getElementById('name').value.trim();
+            const commentText = document.getElementById('comment').value.trim();
+    
+            if (name && commentText) {
+                try {
+                    // Nettoyer les entrées avec DOMPurify
+                    const cleanName = DOMPurify.sanitize(name);
+                    const cleanComment = DOMPurify.sanitize(commentText);
+    
+                    // Ajouter le commentaire à Firestore
+                    await addDoc(collection(db, "comments"), {
+                        name: cleanName,
+                        comment: cleanComment,
+                        date: new Date()
+                    });
+    
+                    // Réinitialiser les champs du formulaire
+                    document.getElementById('name').value = '';
+                    document.getElementById('comment').value = '';
+    
+                    // Recharger les commentaires
+                    await loadComments();
+    
+                    // Fermer le modal
+                    closeModal();
+                } catch (error) {
+                    console.error("Erreur lors de l'ajout du commentaire : ", error);
+                    alert("Une erreur s'est produite lors de l'ajout du commentaire. Veuillez réessayer.");
+                }
+            } else {
+                alert("Veuillez remplir tous les champs.");
+            }
+        }
+    
+        // Charger les commentaires au démarrage
+        document.addEventListener('DOMContentLoaded', () => {
+            loadComments();
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.4.0/purify.min.js"></script>
+</body>
+</html>

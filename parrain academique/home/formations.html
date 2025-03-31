@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Parrain Académique - Formations</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        /* Style personnalisé pour l'effet combiné */
+        .combined-effect {
+            background: linear-gradient(90deg, #dc3545, #007bff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; /* Correction pour Chrome et Safari */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-white font-sans">
+
+  <!-- Header avec Navigation -->
+  <header class="bg-white shadow-md fixed w-full z-50">
+    <div class="container mx-auto flex justify-between items-center px-4 py-4">
+        <!-- Logo -->
+        <a href="#" class="flex items-center">
+            <img src="logo.jpg" alt="Logo Le Parrain Académique" class="h-16 w-16 rounded-full">
+        </a>
+        <!-- Navigation -->
+        <nav class="hidden md:flex space-x-6">
+            <a href="accueil.html" class="text-gray-700 hover:text-red-600 transition duration-300">Accueil</a>
+            <a href="Formations.html" class="text-gray-700 hover:text-red-600 transition duration-300">Formations</a>
+            <a href="contact.html" class="text-gray-700 hover:text-red-600 transition duration-300">À Propos</a>
+            <a href="actualite.html" class="text-gray-700 hover:text-red-600 transition duration-300">Actualités</a>
+            <a href="aide.html" class="text-gray-700 hover:text-red-600 transition duration-300">Aide</a>
+            <a href="profil.html" class="text-gray-700 hover:text-red-600 transition duration-300">Profil</a>
+        </nav>
+        <!-- Bouton Se Connecter -->
+        <a href="login.html" class="bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition duration-300">
+            Se Connecter
+        </a>
+        <!-- Menu Mobile -->
+        <button id="menuBtn" class="md:hidden text-gray-700 focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+        </button>
+    </div>
+    <!-- Menu Mobile Dropdown -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white shadow-lg px-4 py-2">
+        <a href="accueil.html" class="block text-gray-700 hover:text-red-600 py-2">Accueil</a>
+        <a href="formations.html" class="block text-gray-700 hover:text-red-600 py-2">Formations</a>
+        <a href="contact.html" class="block text-gray-700 hover:text-red-600 py-2">À Propos</a>
+        <a href="actualite.html" class="text-gray-700 hover:text-red-600 transition duration-300">Actualités</a>
+        <a href="help.html" class="block text-gray-700 hover:text-red-600 py-2">Aide</a>
+        <a href="profil.html" class="block text-gray-700 hover:text-red-600 py-2">Profil</a>
+    </div>
+</header>
+
+    <!-- Section Hero -->
+    <section class="relative h-screen">
+<!-- Carrousel -->
+<div class="swiper mySwiper h-full">
+    <div class="swiper-wrapper">
+        <!-- Diapositive 1 -->
+        <div class="swiper-slide">
+            <div class="bg-cover bg-center h-full" style="background-image: url('images/IMG-slide1.jpg');">
+                <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-white">
+                    <h2 class="text-5xl font-bold mb-4 animate__animated animate__fadeInDown">Nos Formations</h2>
+                    <p class="text-xl mb-8 animate__animated animate__fadeInDown animate__delay-1s">Découvrez nos formations adaptées aux étudiants de niveau 1 de l'Université de Douala.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Diapositive 2 -->
+        <div class="swiper-slide">
+            <div class="bg-cover bg-center h-full" style="background-image: url('images/IMG-slide2.jpg');">
+                <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-white">
+                    <h2 class="text-5xl font-bold mb-4 animate__animated animate__fadeInDown">Développez vos Compétences</h2>
+                    <p class="text-xl mb-8 animate__animated animate__fadeInDown animate__delay-1s">Formations pratiques et théoriques pour une meilleure compréhension.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ajoutez d'autres diapositives si nécessaire -->
+    </div>
+
+    <!-- Pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- Navigation Buttons -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+</div>
+    </section>
+    <section id="formations">
+        <!-- Formations Section -->
+        <div class="container mx-auto mt-10">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Nos Formations</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Infographie -->
+                <div
+                    class="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 animate__animated animate__fadeInLeft">
+                    <i class="fas fa-paint-brush text-4xl text-red-600 mb-4"></i>
+                    <h3 class="text-xl font-bold text-red-600 mb-4">Infographie</h3>
+                    <p class="text-gray-700 mb-4">Maîtrisez les outils de création graphique comme Photoshop, Illustrator et
+                        Canva.</p>
+                    <p class="text-gray-700 mb-2"><strong>Durée :</strong> 3 mois</p>
+                    <p class="text-gray-700 mb-4"><strong>Coût :</strong> 35 000 FCFA</p>
+                    <div class="flex space-x-4">
+                        <a href="https://wa.me/237652923409" class="text-green-500 hover:text-green-600"><i
+                                class="fab fa-whatsapp"></i></a>
+                        <a href="tel:+237652923409" class="text-blue-500 hover:text-blue-600"><i
+                                class="fas fa-phone"></i></a>
+                        <a href="mailto:contact@leparrainacademique.com" class="text-red-500 hover:text-red-600"><i
+                                class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+    
+                <!-- Développement Web -->
+                <div
+                    class="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 animate__animated animate__fadeInUp">
+                    <i class="fas fa-code text-4xl text-red-600 mb-4"></i>
+                    <h3 class="text-xl font-bold text-red-600 mb-4">Développement Web</h3>
+                    <p class="text-gray-700 mb-4">Devenez un expert en HTML, CSS, JavaScript et frameworks modernes comme
+                        React et Vue.js.</p>
+                    <p class="text-gray-700 mb-2"><strong>Durée :</strong> 6 mois</p>
+                    <p class="text-gray-700 mb-4"><strong>Coût :</strong> 70 000 FCFA</p>
+                    <div class="flex space-x-4">
+                        <a href="https://wa.me/237652923409" class="text-green-500 hover:text-green-600"><i
+                                class="fab fa-whatsapp"></i></a>
+                        <a href="tel:+237652923409" class="text-blue-500 hover:text-blue-600"><i
+                                class="fas fa-phone"></i></a>
+                        <a href="mailto:contact@leparrainacademique.com" class="text-red-500 hover:text-red-600"><i
+                                class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+    
+                <!-- Marketing Digital -->
+                <div
+                    class="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 animate__animated animate__fadeInRight">
+                    <i class="fas fa-chart-line text-4xl text-red-600 mb-4"></i>
+                    <h3 class="text-xl font-bold text-red-600 mb-4">Marketing Digital</h3>
+                    <p class="text-gray-700 mb-4">Apprenez les stratégies de marketing en ligne, SEO, publicité sur les
+                        réseaux sociaux et Google Ads.</p>
+                    <p class="text-gray-700 mb-2"><strong>Durée :</strong> 4 mois</p>
+                    <p class="text-gray-700 mb-4"><strong>Coût :</strong> 45 000 FCFA</p>
+                    <div class="flex space-x-4">
+                        <a href="https://wa.me/237652923409" class="text-green-500 hover:text-green-600"><i
+                                class="fab fa-whatsapp"></i></a>
+                        <a href="tel:+237652923409" class="text-blue-500 hover:text-blue-600"><i
+                                class="fas fa-phone"></i></a>
+                        <a href="mailto:contact@leparrainacademique.com" class="text-red-500 hover:text-red-600"><i
+                                class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                 <!-- Cours de Remise à Niveau -->
+                 <div
+                 class="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 animate__animated animate__fadeInLeft">
+                 <i class="fas fa-redo text-4xl text-red-600 mb-4"></i>
+                 <h3 class="text-xl font-bold text-red-600 mb-4">Cours de Remise à Niveau</h3>
+                 <p class="text-gray-700 mb-4">Renforcez vos compétences de base en mathématiques, français et anglais.</p>
+                 <p class="text-gray-700 mb-2"><strong>Durée :</strong> 2 mois</p>
+                 <p class="text-gray-700 mb-4"><strong>Coût :</strong> 25 000 FCFA</p>
+                 <div class="flex space-x-4">
+                     <a href="https://wa.me/237652923409" class="text-green-500 hover:text-green-600"><i
+                             class="fab fa-whatsapp"></i></a>
+                     <a href="tel:+237652923409" class="text-blue-500 hover:text-blue-600"><i
+                             class="fas fa-phone"></i></a>
+                     <a href="mailto:contact@leparrainacademique.com" class="text-red-500 hover:text-red-600"><i
+                             class="fas fa-envelope"></i></a>
+                 </div>
+             </div>
+    
+             <!-- Formation en Infographie -->
+             <div
+                 class="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 animate__animated animate__fadeInUp">
+                 <i class="fas fa-palette text-4xl text-red-600 mb-4"></i>
+                 <h3 class="text-xl font-bold text-red-600 mb-4">Formation en Infographie</h3>
+                 <p class="text-gray-700 mb-4">Apprenez à créer des designs visuellement attrayants avec les outils
+                     modernes.</p>
+                 <p class="text-gray-700 mb-2"><strong>Durée :</strong> 3 mois</p>
+                 <p class="text-gray-700 mb-4"><strong>Coût :</strong> 35 000 FCFA</p>
+                 <div class="flex space-x-4">
+                     <a href="https://wa.me/237652923409" class="text-green-500 hover:text-green-600"><i
+                             class="fab fa-whatsapp"></i></a>
+                     <a href="tel:+237652923409" class="text-blue-500 hover:text-blue-600"><i
+                             class="fas fa-phone"></i></a>
+                     <a href="mailto:contact@leparrainacademique.com" class="text-red-500 hover:text-red-600"><i
+                             class="fas fa-envelope"></i></a>
+                 </div>
+             </div>
+    
+             <!-- Préparation Concours -->
+             <div
+                 class="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 animate__animated animate__fadeInRight">
+                 <i class="fas fa-graduation-cap text-4xl text-red-600 mb-4"></i>
+                 <h3 class="text-xl font-bold text-red-600 mb-4">Préparation Concours</h3>
+                 <p class="text-gray-700 mb-4">Préparez-vous efficacement aux concours d'entrée des grandes écoles et
+                     universités.</p>
+                 <p class="text-gray-700 mb-2"><strong>Durée :</strong> 4 mois</p>
+                 <p class="text-gray-700 mb-4"><strong>Coût :</strong> 50 000 FCFA</p>
+                 <div class="flex space-x-4">
+                     <a href="https://wa.me/237652923409" class="text-green-500 hover:text-green-600"><i
+                             class="fab fa-whatsapp"></i></a>
+                     <a href="tel:+237652923409" class="text-blue-500 hover:text-blue-600"><i
+                             class="fas fa-phone"></i></a>
+                     <a href="mailto:contact@leparrainacademique.com" class="text-red-500 hover:text-red-600"><i
+                             class="fas fa-envelope"></i></a>
+                 </div>
+             </div>
+    
+             <!-- Formation en Pack Office -->
+             <div
+                 class="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 animate__animated animate__fadeInLeft">
+                 <i class="fas fa-file-excel text-4xl text-red-600 mb-4"></i>
+                 <h3 class="text-xl font-bold text-red-600 mb-4">Formation en Pack Office</h3>
+                 <p class="text-gray-700 mb-4">Maîtrisez Word, Excel et PowerPoint pour optimiser votre productivité
+                     bureau.</p>
+                 <p class="text-gray-700 mb-2"><strong>Durée :</strong> 2 mois</p>
+                 <p class="text-gray-700 mb-4"><strong>Coût :</strong> 30 000 FCFA</p>
+                 <div class="flex space-x-4">
+                     <a href="https://wa.me/237652923409" class="text-green-500 hover:text-green-600"><i
+                             class="fab fa-whatsapp"></i></a>
+                     <a href="tel:+237652923409" class="text-blue-500 hover:text-blue-600"><i
+                             class="fas fa-phone"></i></a>
+                     <a href="mailto:contact@leparrainacademique.com" class="text-red-500 hover:text-red-600"><i
+                             class="fas fa-envelope"></i></a>
+                 </div>
+             </div>
+    
+             <!-- Création de Base de Données -->
+             <div
+                 class="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 animate__animated animate__fadeInUp">
+                 <i class="fas fa-database text-4xl text-red-600 mb-4"></i>
+                 <h3 class="text-xl font-bold text-red-600 mb-4">Création de Base de Données</h3>
+                 <p class="text-gray-700 mb-4">Concevez et gérez des bases de données efficaces avec MySQL et PostgreSQL.</p>
+                 <p class="text-gray-700 mb-2"><strong>Durée :</strong> 4 mois</p>
+                 <p class="text-gray-700 mb-4"><strong>Coût :</strong> 60 000 FCFA</p>
+                 <div class="flex space-x-4">
+                     <a href="https://wa.me/237652923409" class="text-green-500 hover:text-green-600"><i
+                             class="fab fa-whatsapp"></i></a>
+                     <a href="tel:+237652923409" class="text-blue-500 hover:text-blue-600"><i
+                             class="fas fa-phone"></i></a>
+                     <a href="mailto:contact@leparrainacademique.com" class="text-red-500 hover:text-red-600"><i
+                             class="fas fa-envelope"></i></a>
+                 </div>
+             </div>
+    
+             <!-- Formation en Développement logiciel -->
+             <div
+                 class="bg-white p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105 animate__animated animate__fadeInRight">
+                 <i class="fas fa-laptop-code text-4xl text-red-600 mb-4"></i>
+                 <h3 class="text-xl font-bold text-red-600 mb-4">Formation en Développement logiciel</h3>
+                 <p class="text-gray-700 mb-4">Créez des applications robustes avec des langages comme Java, C# et Python.</p>
+                 <p class="text-gray-700 mb-2"><strong>Durée :</strong> 6 mois</p>
+                 <p class="text-gray-700 mb-4"><strong>Coût :</strong> 75 000 FCFA</p>
+                 <div class="flex space-x-4">
+                     <a href="https://wa.me/237652923409" class="text-green-500 hover:text-green-600"><i
+                             class="fab fa-whatsapp"></i></a>
+                     <a href="tel:+237652923409" class="text-blue-500 hover:text-blue-600"><i
+                             class="fas fa-phone"></i></a>
+                     <a href="mailto:contact@leparrainacademique.com" class="text-red-500 hover:text-red-600"><i
+                             class="fas fa-envelope"></i></a>
+                 </div>
+             </div>
+            </div>
+        </div>
+    
+    </section>
+
+    
+    <section id="atout" class="bg-gray-100 py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-red-600 mb-12 animate__animated animate__fadeIn text-center ">Nos Atouts</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Atout 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-4 text-center">
+                        <h5 class="text-lg font-semibold mb-2 text-gray-800">Lieu de la Formation et des Cours</h5>
+                        <p class="text-blue-500 hover:text-blue-700">
+                            <a href="#" class="flex items-center justify-center">
+                                <i class="bi bi-geo-alt mr-2 text-yellow-500 text-2xl"></i>
+                                Douala Carrefour Ange Raphaël
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <!-- Atout 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-4 text-center">
+                        <h5 class="text-lg font-semibold mb-2 text-gray-800">Équipe Pédagogique Expérimentée</h5>
+                        <p class="text-gray-600">Enseignants qualifiés et passionnés pour vous aider à atteindre vos objectifs</p>
+                    </div>
+                </div>
+    
+                <!-- Atout 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-4 text-center">
+                        <h5 class="text-lg font-semibold mb-2 text-gray-800">Équipements Modernes et Performants</h5>
+                        <p class="text-gray-600">Infrastructure pour l'amélioration du travail.</p>
+                    </div>
+                </div>
+    
+                <!-- Atout 4 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-4 text-center">
+                        <h5 class="text-lg font-semibold mb-2 text-gray-800">Ambiance Conviviale et Motivante</h5>
+                        <p class="text-gray-600">Environnement de travail collaboratif et encourageant pour favoriser votre réussite</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+   <!-- Section Témoignages -->
+<section id="temoignages" class="py-16 bg-white">
+    <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold text-red-600 mb-12 animate__animated animate__fadeIn">Témoignages d'Étudiants</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+                <p>"J'ai suivi la formation en développement web et cela a changé ma carrière ! Les formateurs sont très compétents." - Étudiant 1</p>
+            </div>
+            <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+                <p>"Les cours d'infographie m'ont permis de trouver un emploi rapidement. Je recommande vivement cette école !" - Étudiant 2</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section Contact -->
+<section id="contact" class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold text-red-600 mb-12 animate__animated animate__fadeIn">Contactez-Nous</h2>
+        <p>Pour toute question ou demande d'information, n'hésitez pas à nous contacter.</p><br>
+        <a href="#" class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition duration-300">Nous Contacter</a>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="bg-red-600 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Informations de Contact -->
+                <div>
+                    <h5 class="text-xl font-bold mb-4">Contactez-Nous</h5>
+                    <p class="text-gray-200">Adresse : Ange Raphaël, Campus 1, Université de Douala</p>
+                    <p class="text-gray-200">Téléphone : <a href="tel:+237652923409" class="underline">+237 652 92 34 09</a></p>
+                    <p class="text-gray-200">Email : <a href="mailto:contact@leparrainacademique.com" class="underline">contact@leparrainacademique.com</a></p>
+                </div>
+                <!-- Liens Rapides -->
+                <div>
+                    <h5 class="text-xl font-bold mb-4">Liens Rapides</h5>
+                    <ul class="space-y-2">
+                        <li><a href="accueil.html" class="text-gray-200 hover:text-white">Accueil</a></li>
+                        <li><a href="formations.html" class="text-gray-200 hover:text-white">Formations</a></li>
+                        <li><a href="contact.html" class="text-gray-200 hover:text-white">À Propos</a></li>
+                        <li><a href="help.html" class="text-gray-200 hover:text-white">Aide</a></li>
+                        <li><a href="#" class="text-gray-200 hover:text-white">Mentions Légales</a></li>
+                    </ul>
+                </div>
+                <!-- Réseaux Sociaux -->
+                <div>
+                    <h5 class="text-xl font-bold mb-4">Suivez-Nous</h5>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-200 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-200 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-200 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-200 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <!-- Newsletter -->
+                <div>
+                    <h5 class="text-xl font-bold mb-4">Newsletter</h5>
+                    <form class="flex">
+                        <input type="email" placeholder="Votre email" class="w-full p-2 rounded-l-lg focus:outline-none text-gray-700">
+                        <button type="submit" class="bg-white text-red-600 px-4 py-2 rounded-r-lg hover:bg-gray-100 transition duration-300">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <p>&copy; 2023 Le Parrain Académique. Tous droits réservés.</p>
+                <p>Conçu par <strong><a href="https://wa.me/237690372862">Herman</a> </strong></p>
+            </div>
+        </div>
+    </footer>
+
+
+<!-- Script pour Initialiser Swiper.js -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    // Menu Mobile
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
+
+<!-- Script pour initialiser Swiper -->
+<script>
+    const swiper = new Swiper('.mySwiper', {
+        loop: true, // Permet de boucler les diapositives
+        autoplay: {
+            delay: 3000, // Délai entre les diapositives (3 secondes)
+            disableOnInteraction: false, // Continue l'autoplay après interaction
+        },
+        pagination: {
+            el: '.swiper-pagination', // Sélecteur de la pagination
+            clickable: true, // Permet de cliquer sur les points de pagination
+        },
+        navigation: {
+            nextEl: '.swiper-button-next', // Sélecteur du bouton suivant
+            prevEl: '.swiper-button-prev', // Sélecteur du bouton précédent
+        },
+        // Effets de transition (optionnel)
+        effect: 'fade', // Effet de fondu entre les diapositives
+        fadeEffect: {
+            crossFade: true, // Active le fondu croisé
+        },
+    });
+</script>
+
+</body>
+</html>

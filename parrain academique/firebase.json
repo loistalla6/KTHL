@@ -1,0 +1,12 @@
+{
+  "hosting": {
+    "site": "le-parrain-academique",
+    "public": "home",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
+

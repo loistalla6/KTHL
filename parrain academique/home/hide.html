@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="og:title" content="LE PARRAIN ACADEMIQUE">
+    <meta name="og:description"
+        content="Apprenez et progressez avec le Parrain Académique ! Proposant des cours de remise à niveau et ressources pour étudiants et professionnels.">
+    <meta name="og:image" content="logo.jpg">
+    <meta name="og:url" content="https://le-parrain-academique.web.app">
+    <title>Aide - Le Parrain Académique</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body class="bg-white">
+    <!-- Header avec Navigation -->
+    <header class="bg-white shadow-md fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center px-4 py-4">
+            <!-- Logo -->
+            <a href="#" class="flex items-center">
+                <img src="logo.jpg" alt="Logo Le Parrain Académique" class="h-16 w-16 rounded-full">
+            </a>
+            <!-- Navigation -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="accueil.html" class="text-gray-700 hover:text-red-600 transition duration-300">Accueil</a>
+                <a href="formations.html" class="text-gray-700 hover:text-red-600 transition duration-300">Formations</a>
+                <a href="aide.html" class="text-gray-700 hover:text-red-600 transition duration-300">À Propos</a>
+                <a href="contact.html" class="text-gray-700 hover:text-red-600 transition duration-300">Contact</a>
+            </nav>
+            <!-- Bouton Se Connecter -->
+            <a href="profil.html" class="bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition duration-300">
+                Se Connecter
+            </a>
+            <!-- Menu Mobile -->
+            <button id="menuBtn" class="md:hidden text-gray-700 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Menu Mobile Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white shadow-lg px-4 py-2">
+            <a href="accueil.html" class="block text-gray-700 hover:text-red-600 py-2">Accueil</a>
+            <a href="formations.html" class="block text-gray-700 hover:text-red-600 py-2">Formations</a>
+            <a href="aide.html" class="block text-gray-700 hover:text-red-600 py-2">À Propos</a>
+            <a href="contact.html" class="block text-gray-700 hover:text-red-600 py-2">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-24">
+        <div class="relative">
+            <img src="images/IMG-20240907-WA0057.jpg" alt="Image d'accueil" class="w-full h-64 object-cover">
+            <div class="absolute inset-0 bg-blue-600 bg-opacity-75 flex items-center justify-center">
+                <h1 class="text-white text-4xl font-bold">Aide</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <h2 class="text-3xl font-bold text-center mb-8 text-blue-600">Informations Utiles</h2>
+
+        <!-- Accordion -->
+        <div class="space-y-4">
+            <!-- Accordion Item 1 -->
+            <div class="bg-white rounded-lg shadow border border-blue-200">
+                <button class="w-full p-4 text-left font-semibold text-blue-600 hover:bg-blue-50" onclick="toggleAccordion('accordion1')">
+                    Qu'est-ce que le Parrain Académique ?
+                </button>
+                <div id="accordion1" class="p-4 hidden text-gray-700">
+                    Le Parrain Académique est un site d'éducation qui propose des formations et des cours de remise à niveau.
+                </div>
+            </div>
+
+            <!-- Accordion Item 2 -->
+            <div class="bg-white rounded-lg shadow border border-blue-200">
+                <button class="w-full p-4 text-left font-semibold text-blue-600 hover:bg-blue-50" onclick="toggleAccordion('accordion2')">
+                    Quels sont les objectifs du Parrain Académique ?
+                </button>
+                <div id="accordion2" class="p-4 hidden text-gray-700">
+                    Notre objectif est de fournir une éducation de qualité pour aider les étudiants à réussir leurs études et leur carrière.
+                </div>
+            </div>
+
+            <!-- Add more accordion items as needed -->
+        </div>
+
+        <!-- Comment Section -->
+        <div class="mt-12 text-center">
+            <h2 class="text-3xl font-bold mb-4 text-blue-600">Commentaires</h2>
+            <p class="mb-4 text-gray-700">Avez-vous trouvé ces informations utiles ?</p>
+            <button class="bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600" onclick="openCommentModal()">
+                Donner un avis
+            </button>
+        </div>
+
+        <!-- Comment Modal -->
+        <div id="commentModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center p-4">
+            <div class="bg-white rounded-lg w-full max-w-md p-6">
+                <h3 class="text-xl font-bold mb-4 text-blue-600">Vos Commentaires</h3>
+                <form id="commentForm">
+                    <div class="mb-4">
+                        <label for="name" class="block font-semibold text-blue-600">Votre nom</label>
+                        <input type="text" id="name" class="w-full p-2 border border-blue-200 rounded" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for "comment" class "block font-semibold text-blue - 600">Votre commentaire</label>
+                        <textarea id "comment " rows = "3 "class = "w-full p - 2 border border - blue - 200 rounded " required ></textarea >
+                    </div >
+                    <div class = "flex justify-end space-x - 4 ">
+                        <button type = "button "class = "bg-gray - 500 text - white px - 4 py - 2 rounded hover:bg - gray - 600 "onclick = "closeCommentModal() ">
+                            Fermer
+                        </button >
+                        <button type = "submit "class = "bg-red - 500 text - white px - 4 py - 2 rounded hover:bg - red - 600 ">
+                            Envoyer
+                        </button >
+                    </div >
+                </form >
+            </div >
+        </div >
+
+        <!-- Recent Comments -->
+        <div id = "recentComments "class = "mt - 8 ">
+            <h3 class = "text - 2xl font-bold mb - 4 text - blue - 600 ">Messages Récents</h3 >
+            <div id = "commentsContainer "class = "space-y - 4 ">
+                <!-- Comments will be dynamically added here -->
+            </div >
+        </div >
+    </main >
+
+    <!-- Footer -->
+    <footer class = "bg-blue - 600 text - white py - 8 ">
+        <div class = "container mx-auto px - 4 ">
+            <div class = "text-center mb - 6 ">
+                <img src = "logo.jpg "alt = "Logo du Site "class = "w - 20 h - 20 mx-auto rounded-full ">
+            </div >
+            <div class = "grid grid-cols - 1 md:grid-cols - 3 gap - 8 ">
+                <!-- Contact Info -->
+                <div >
+                    <h4 class = "font-bold mb - 4 ">Contactez-Nous</h4 >
+                    <p ><strong>Téléphone:</strong> +237 690372862</p >
+                    <p ><strong>Email:</strong> loistalla6@gmail.com</p >
+                    <p ><strong>Adresse:</strong> Carrefour Ange Raphaël</p >
+                </div >
+                <!-- Quick Links -->
+                <!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Parrain Académique</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+    <div class="container mx-auto mt-5 p-5 bg-white rounded shadow-lg">
+        <h4 class="font-bold mb-4">Liens Rapides</h4>
+        <ul class="space-y-2">
+            <li><a href="formations.html" class="hover:text-red-500">Nos Formations</a></li>
+            <li><a href="#" class="hover:text-red-500">Catalogue</a></li>
+            <li><a href="aide.html" class="hover:text-red-500">À Propos</a></li>
+            <li><a href="contact.html" class="hover:text-red-500">Contact</a></li>
+        </ul>
+    </div>
+    
+    <!-- Social Media -->
+    <div class="container mx-auto mt-5 p-5 bg-white rounded shadow-lg">
+        <h4 class="font-bold mb-4">Suivez-Nous</h4>
+        <div class="flex space-x-4 justify-center">
+            <a href="#" class="hover:text-red-500"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="hover:text-red-500"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="hover:text-red-500"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="hover:text-red-500"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="hover:text-red-500"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+    
+    <div class="text-center mt-8">
+        <p>&copy; 2024 Le Parrain Académique. Tous droits réservés.</p>
+    </div>
+    
+    <!-- Scripts -->
+    <script>
+        // Fonction de validation des entrées
+        function validateInput(input) {
+            const regex = /^[a-zA-Z0-9\s.,!?'-]*$/; // Autoriser lettres, chiffres, espaces et ponctuation
+            return regex.test(input);
+        }
+
+        // Fonction pour échapper le HTML
+        function escapeHtml(html) {
+            const element = document.createElement('div');
+            element.innerText = html; // Utiliser innerText pour éviter l'interprétation du HTML
+            return element.innerHTML;
+        }
+
+        // Toggle Accordion
+        function toggleAccordion(id) {
+            const content = document.getElementById(id);
+            content.classList.toggle('hidden');
+        }
+
+        // Comment Modal
+        function openCommentModal() {
+            document.getElementById('commentModal').classList.remove('hidden');
+        }
+
+        function closeCommentModal() {
+            document.getElementById('commentModal').classList.add('hidden');
+        }
+
+        // Gestionnaire d'événements pour le formulaire
+        document.getElementById('commentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const comment = document.getElementById('comment').value;
+
+            // Valider les entrées
+            if (validateInput(name) && validateInput(comment)) {
+                // Ajouter le commentaire au conteneur des commentaires
+                const commentsContainer = document.getElementById('commentsContainer');
+                const commentDiv = document.createElement('div');
+                commentDiv.className = 'bg-white p-4 rounded-lg shadow border border-blue-200';
+                commentDiv.innerHTML = `<strong class="text-blue-600">${escapeHtml(name)}</strong>: 
+                <span class="text-gray-700">${escapeHtml(comment)}</span>`;
+                commentsContainer.appendChild(commentDiv);
+
+                // Réinitialiser le formulaire et fermer la modal
+                document.getElementById('name').value = '';
+                document.getElementById('comment').value = '';
+                closeCommentModal();
+            } else {
+                alert("Veuillez n'utiliser que des caractères autorisés.");
+            }
+        });
+
+        // Toggle Mobile Menu
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>
+
+function validateInput(input) {
+    const regex = /^[a-zA-Z0-9\s.,!?'-]*$/; // Autoriser lettres, chiffres, espaces et ponctuation
+    return regex.test(input);
+}
+
+// Fonction pour échapper le HTML
+function escapeHtml(html) {
+    const element = document.createElement('div');
+    element.innerText = html; // Utiliser innerText pour éviter l'interprétation du HTML
+    return element.innerHTML;
+}
+
+// Toggle Accordion
+function toggleAccordion(id) {
+    const content = document.getElementById(id);
+    content.classList.toggle('hidden');
+}
+
+// Comment Modal
+function openCommentModal() {
+    document.getElementById('commentModal').classList.remove('hidden');
+}
+
+function closeCommentModal() {
+    document.getElementById('commentModal').classList.add('hidden');
+}
+
+// Gestionnaire d'événements pour le formulaire
+document.getElementById('commentForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const comment = document.getElementById('comment').value;
+
+    // Valider les entrées
+    if (validateInput(name) && validateInput(comment)) {
+        // Ajouter le commentaire au conteneur des commentaires
+        const commentsContainer = document.getElementById('commentsContainer');
+        const commentDiv = document.createElement('div');
+        commentDiv.className = 'bg-white p-4 rounded-lg shadow border border-blue-200';
+        commentDiv.innerHTML = `<strong class="text-blue-600">${escapeHtml(name)}</strong>: 
+        <span class="text-gray-700">${escapeHtml(comment)}</span>`;
+        commentsContainer.appendChild(commentDiv);
+
+        // Réinitialiser le formulaire et fermer la modal
+        document.getElementById('name').value = '';
+        document.getElementById('comment').value = '';
+        closeCommentModal();
+    } else {
+        alert("Veuillez n'utiliser que des caractères autorisés.");
+    }
+});
+
+// Toggle Mobile Menu
+document.getElementById('menuBtn').addEventListener('click', function() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenu.classList.toggle('hidden');
+});
+Titre de la section
+    <div class="bg-gray-100 py-12">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl font-bold text-center mb-8">Notre Catalogue</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Flyer 1 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+              <img src="images/IMG-20240905-WA0018" alt="Flyer 1" class="w-full h-48 object-cover">
+              <div class="p-4">
+                <h3 class="text-xl font-semibold mb-2">Flyer 1</h3>
+                <p class="text-gray-600">Description du flyer 1.</p>
+              </div>
+            </div>
+      
+            <!-- Flyer 2 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+              <img src="images/IMG-20240905-WA0019" alt="Flyer 2" class="w-full h-48 object-cover">
+              <div class="p-4">
+                <h3 class="text-xl font-semibold mb-2">Flyer 2</h3>
+                <p class="text-gray-600">Description du flyer 2.</p>
+              </div>
+            </div>
+      
+            <!-- Flyer 3 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+              <img src="" alt="Flyer 3" class="w-full h-48 object-cover">
+              <div class="p-4">
+                <h3 class="text-xl font-semibold mb-2">Flyer 3</h3>
+                <p class="text-gray-600">Description du flyer 3.</p>
+              </div>
+            </div>
+      
+            <!-- Flyer 4 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+              <img src="images/IMG-20241012-WA0016.jpg" alt="Flyer 4" class="w-full h-48 object-cover">
+              <div class="p-4">
+                <h3 class="text-xl font-semibold mb-2">Flyer 4</h3>
+                <p class="text-gray-600">Description du flyer 4.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

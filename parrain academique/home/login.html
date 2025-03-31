@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="og:title" content="LE PARRAIN ACADEMIQUE">
+    <meta name="og:description"
+        content="Apprenez et progressez avec le Parrain Académique ! Des cours de remise à niveau et des ressources pour étudiants et professionnels.">
+    <meta name="og:image" content="logo.jpg">
+    <meta name="og:url" content="https://le-parrain-academique.web.app">
+    <title>Inscription - Le Parrain Académique</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .gradient-bg {
+            background: linear-gradient(45deg, #007bff, #ffffff, #dc3545);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+    </style>
+</head>
+
+<body class="gradient-bg min-h-screen flex items-center justify-center">
+    <!-- Formulaire d'inscription -->
+    <div class="bg-white p-8 rounded-lg shadow-2xl w-full max-w-md mx-4">
+        <!-- En-tête du formulaire -->
+        <div class="text-center mb-8">
+            <img src="logo.jpg" alt="Logo du site" class="w-24 h-24 mx-auto mb-4 rounded-full shadow-md">
+            <h1 class="text-3xl font-bold text-blue-600">Inscription</h1>
+            <p class="text-gray-600 mt-2">Rejoignez-nous pour accéder à des ressources éducatives exclusives.</p>
+        </div>
+
+        <!-- Formulaire -->
+        <form id="inscriptionForm" class="space-y-6">
+            <!-- Champ Nom -->
+            <div>
+                <label for="nom" class="block text-sm font-medium text-gray-700">Nom</label>
+                <input type="text" id="nom" name="nom" required
+                    class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300"
+                    placeholder="Entrez votre nom">
+            </div>
+
+            <!-- Champ Prénom -->
+            <div>
+                <label for="prenom" class="block text-sm font-medium text-gray-700">Prénom</label>
+                <input type="text" id="prenom" name="prenom" required
+                    class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300"
+                    placeholder="Entrez votre prénom">
+            </div>
+
+            <!-- Champ Niveau d'études -->
+            <div>
+                <label for="niveauEtudes" class="block text-sm font-medium text-gray-700">Niveau d'études</label>
+                <input type="text" id="niveauEtudes" name="niveauEtudes" required
+                    class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300"
+                    placeholder="Exemple : L1">
+            </div>
+
+            <!-- Champ Filière -->
+            <div>
+                <label for="filiere" class="block text-sm font-medium text-gray-700">Filière</label>
+                <input type="text" id="filiere" name="filiere" required
+                    class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300"
+                    placeholder="Exemple : INF">
+            </div>
+
+            <!-- Champ Numéro de téléphone -->
+            <div>
+                <label for="phoneNumber" class="block text-sm font-medium text-gray-700">Numéro de téléphone</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" required
+                    class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300"
+                    placeholder="+237657448832">
+            </div>
+
+            <!-- Bouton d'inscription -->
+            <button type="submit"
+                class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-300">
+                S'inscrire
+            </button>
+        </form>
+
+        <!-- Lien vers la connexion -->
+        <div class="mt-6 text-center">
+            <p class="text-gray-600">Vous avez déjà un compte ? <a href="#" class="text-blue-600 hover:underline">Connectez-vous</a></p>
+        </div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+        import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js";
+
+        // Configuration Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyA1_I2WrJjnDSGr7NcNtuwFd4wnVc20V8k",
+            authDomain: "le-parrain-academique.firebaseapp.com",
+            projectId: "le-parrain-academique",
+            storageBucket: "le-parrain-academique.appspot.com",
+            messagingSenderId: "835818417413",
+            appId: "1:835818417413:web:083056b7a007db925e9b6c"
+        };
+
+        // Initialiser Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // Vérification de la connexion de l'utilisateur
+        const checkUser = () => {
+            const user = localStorage.getItem('user');
+            if (user) {
+                window.location.href = 'accueil.html'; // Redirige vers la page d'accueil si l'utilisateur est déjà inscrit
+            }
+        };
+
+        // Appeler la fonction de vérification lors du chargement de la page
+        checkUser();
+
+        // Fonction pour échapper les caractères spéciaux
+        const sanitizeInput = (input) => {
+            const element = document.createElement('div');
+            element.innerText = input;
+            return element.innerHTML;
+        };
+
+        // Inscription
+        const inscriptionForm = document.getElementById('inscriptionForm');
+        inscriptionForm.addEventListener('submit', async (event) => {
+            event.preventDefault(); // Empêche le rechargement de la page
+
+            // Récupérer les valeurs des champs et les assainir
+            const nom = sanitizeInput(document.getElementById('nom').value);
+            const prenom = sanitizeInput(document.getElementById('prenom').value);
+            const niveauEtudes = sanitizeInput(document.getElementById('niveauEtudes').value);
+            const filiere = sanitizeInput(document.getElementById('filiere').value);
+            const phoneNumber = sanitizeInput(document.getElementById('phoneNumber').value);
+
+            // Créer un document avec les informations de l'utilisateur
+            try {
+                await setDoc(doc(db, "utilisateurs", phoneNumber), {
+                    nom: nom,
+                    prenom: prenom,
+                    niveauEtudes: niveauEtudes,
+                    filiere: filiere,
+                    phoneNumber: phoneNumber
+                });
+
+                // Stocker les informations de l'utilisateur dans localStorage
+                localStorage.setItem('user', JSON.stringify({
+                    nom: nom,
+                    prenom: prenom,
+                    niveauEtudes: niveauEtudes,
+                    filiere: filiere,
+                    phoneNumber: phoneNumber
+                }));
+
+                alert("Inscription réussie !");
+                window.location.href = 'accueil.html'; // Redirige vers la page d'accueil
+            } catch (e) {
+                console.error("Erreur lors de l'inscription : ", e);
+                alert("Erreur lors de l'inscription. Veuillez réessayer.");
+            }
+        });
+    </script>
+</body>
+
+</html>
